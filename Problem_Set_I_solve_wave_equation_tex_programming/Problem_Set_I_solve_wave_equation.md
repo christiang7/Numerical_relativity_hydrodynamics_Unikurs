@@ -19,14 +19,17 @@ noweb.py -RProblem_Set_I_solve_wave_equation.cpp Problem_Set_I_solve_wave_equati
 ```
 
 
-```bash
-chmod u+x Problem_Set_I_solve_wave_equation.cpp && ln -sf /home/christian/Gedankenspeicher/Gedankenspeicherwiki/Physik/Numerical_relativity_hydrodynamics_Unikurs/Problem_Set_I_solve_wave_equation.cpp ~/.local/bin/Problem_Set_I_solve_wave_equation.cpp && echo 'fertig'
- ```
-
 ```cpp
 {{Problem_Set_I_solve_wave_equation.cpp}}=
-
-
+// The C++ standard version:
+#include <cstdio>
+#include <cmath>
+#include <fstream>
+#include <iostream>
+int main(int argc, char** argv)
+{
+    return 0;
+}
 @
 ```
 
