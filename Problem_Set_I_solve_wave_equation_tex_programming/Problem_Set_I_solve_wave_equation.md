@@ -26,6 +26,8 @@ noweb.py -RProblem_Set_I_solve_wave_equation.cpp Problem_Set_I_solve_wave_equati
 #include <cmath>
 #include <fstream>
 #include <iostream>
+using namespace std ;
+
 int main(int argc, char** argv)
 {
     return 0;
