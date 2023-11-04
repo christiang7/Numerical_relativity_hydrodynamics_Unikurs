@@ -1,0 +1,45 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css"
+    />
+  </head>
+  <body>
+    <!-- load docsify script -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    
+    <div id="app"></div>
+
+    <script>
+        window.$docsify = {
+            loadNavbar: true,
+            latex: {
+                inlineMath   : [['%%', '%%'],['\\(', '\\)']], // default ['$', '$'],
+                displayMath  : [['$$', '$$']],               // default
+            },
+            coverpage: true
+        }
+    </script>
+    
+     <!-- load latex engine -->
+    
+    <script src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <!-- load latex docsify script -->
+    
+    <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
+    
+    
+    <nav>
+        <a href="#/">EN</a>
+    </nav>
+    
+  </body>
+</html>
