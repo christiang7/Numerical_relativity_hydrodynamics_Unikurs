@@ -1,0 +1,256 @@
+% Farbige Formeln richtig einfärben über die group Umgebung
+\def\mathcolor#1#{\@mathcolor{#1}}
+\def\@mathcolor#1#2#3{%
+	\protect\leavevmode
+	\begingroup\color#1{#2}#3\endgroup
+}
+\newcommand*{\opcolor}[2]{\mathop{\color{#1}{#2}}}
+%%%%%%%%%%%%%% important variables
+
+\newcommand{\nL}{{\color{cyan!70!black}L}}
+\newcommand{\nnL}{{\color{cyan!70!black}\mathcal{L} } }
+\newcommand{\ntL}{\tilde{{\color{cyan!70!black}L}}}
+\newcommand{\nhL}{\hat{{\color{cyan!70!black}L}}}
+\newcommand{\nnnL}{{\color{cyan!70!black}\mathscr{L}}}
+\newcommand{\nH}{{\color{cyan!70!black}H}}
+\newcommand{\nnH}{{\color{cyan!70!black}\mathcal{H}}}
+%\newcommand{\nD}{{\color{green!50!black}D}
+\newcommand{\nz}{{\color{brown!80!black}z}}
+%\newcommand{\mA}{{\color{green!50!black}A}}
+%\newcommand{\nC}{{\color{cyan!70!black}C}}
+
+%---
+\newcommand{\nR}{{\color{cyan!70!black} R } }
+
+%%%%%%%%%%%%%% generalized coordinates
+
+%\newcommand{\na}{{\color{blue!50!black}a}
+\newcommand{\nx}{{\color{gray}x}}
+%\newcommand{\nX}{{\color{gray}X}
+\newcommand{\nnx}{{\color{green!50!black}x}}
+%\newcommand{\nx}{{\color{cyan!70!black}x}
+\newcommand{\ny}{{\color{gray}y}}
+%\newcommand{\nz}{{\color{green!30!black}\textit{z}}
+%\newcommand{\nA}{{\color{green!50!black}A}
+\newcommand{\nw}{{\color{gray}w}}
+%\newcommand{\nW}{{\color{gray}W}
+\newcommand{\nt}{{\color{gray}t}}
+\newcommand{\ntau}{{\color{gray}\tau}}
+%\newcommand{\npi}{{\color{gray}\pi}
+\newcommand{\nq}{{\color{gray}q}}%!90!black
+\newcommand{\cq}{{\color{gray}q}}
+\newcommand{\dcq}{\dot{\cq}}
+\newcommand{\ddcq}{\ddot{\cq}}
+
+\newcommand{\dddcq}{\dddot{\cq}}
+\newcommand{\ddddcq}{\ddot{\ddot{\cq}} }
+
+\newcommand{\cQ}{{\color{gray}Q}}%!90!black
+\newcommand{\nQ}{{\color{gray}Q}}
+\newcommand{\dcQ}{\dot{\cQ}}
+\newcommand{\np}{{\color{gray}p}}%!60!black
+\newcommand{\cp}{{\color{gray}p}}%!60!black
+\newcommand{\dcp}{{\dot{\cp} }}%!60!black
+\newcommand{\cpi}{{\color{gray}\pi}}
+\newcommand{\cphi}{{\color{gray}\varphi}}
+\newcommand{\cA}{{\color{gray}A }  }
+
+%---
+
+\newcommand{\ct}{{\color{gray}t}}
+\newcommand{\ccr}{{\color{gray}r}}
+\newcommand{\ctheta}{{\color{gray}\theta}}
+\newcommand{\cx}{{\color{gray}x}}
+\newcommand{\fa}{{\color{gray} a } }
+
+\newcommand{\fN}{{\color{gray} N } }
+\newcommand{\fA}{{\color{gray}A}}
+\newcommand{\fvA}{{\color{gray}\mathcal{A}}}
+
+
+%%%%%%%%%%%%%% functions
+
+\newcommand{\nW}{{\color{blue!70!black}W}}
+\newcommand{\neta}{{\color{blue!70!black}\eta}}
+\newcommand{\nnu}{{\color{blue!70!black}u}}
+\newcommand{\dnnu}{\dot{\nnu}}
+\newcommand{\nnv}{{\color{blue!70!black}v}}
+\newcommand{\nsin}{{\color{blue!70!black}\sin}}
+\newcommand{\ncos}{{\color{blue!70!black}\cos}}
+\newcommand{\ntan}{{\color{blue!70!black}\tan}}
+\newcommand{\narctan}{{\color{blue!70!black}\arctan}}
+\newcommand{\ncosh}{{\color{blue!70!black}\cosh}}
+\newcommand{\nsinh}{{\color{blue!70!black}\sinh}}
+\newcommand{\nexp}{{\color{blue!70!black}\exp}}
+\newcommand{\nf}{{\color{blue!70!black}f}}
+\newcommand{\nh}{{\color{blue!70!black}h}}
+\newcommand{\nA}{{\color{blue!70!black}A}}
+\newcommand{\nB}{{\color{blue!70!black}B}}
+\newcommand{\nC}{{\color{blue!70!black}C}}
+\newcommand{\nV}{{\color{blue!70!black}V}}
+\newcommand{\nxi}{{\color{blue!70!black}\xi}}
+\newcommand{\dif}{\mathrm{{\color{blue!70!black}d } } }
+\newcommand{\ndelta}{{\color{blue!70!black}\delta}}
+\newcommand{\nN}{{\color{blue!70!black}N}}
+\newcommand{\nphi}{{\color{blue!70!black}\phi}}
+\newcommand{\nPhi}{{\color{blue!70!black}\Phi}}
+\newcommand{\nnmu}{{\color{blue!70!black}\mu}}
+\newcommand{\dnnmu}{\dot{\nnmu}}
+\newcommand{\nr}{{\color{blue!70!black}r}}
+\newcommand{\nT}{{\color{blue!70!black}T}}
+\newcommand{\nln}{{\color{blue!70!black}\ln}}
+\newcommand{\nE}{{\color{blue!70!black}E}}
+\newcommand{\nK}{{\color{blue!70!black}K}}
+\newcommand{\nng}{{\color{blue!70!black}g}}
+\newcommand{\nnq}{{\color{blue!70!black}q}}
+\newcommand{\npi}{{\color{blue!70!black}\varpi}}
+\newcommand{\nlambda}{{\color{blue!70!black}\lambda}}
+\newcommand{\nZ}{{\color{blue!70!black}Z}}
+\newcommand{\nX}{{\color{blue!70!black}X}}
+\newcommand{\nY}{{\color{blue!70!black}Y}}
+\newcommand{\nF}{{\color{blue!70!black}F}}
+
+%---
+%\newcommand{\fa}{{\color{blue!70!black} a } }
+\newcommand{\fg}{{\color{blue!70!black} g } }
+%\newcommand{\fN}{{\color{blue!70!black} N } }
+%\newcommand{\fA}{{\color{blue!70!black}A}}
+%\newcommand{\fvA}{{\color{blue!70!black}\mathcal{A}}}
+
+\newcommand{\fK}{{\color{blue!70!black} K } }
+\newcommand{\fE}{{\color{blue!70!black} E } }
+\newcommand{\fW}{{\color{blue!70!black} W } }
+
+\newcommand{\fc}{{\color{blue!70!black} c } }
+
+\newcommand{\fsin}{{\color{blue!70!black}\sin}}
+\newcommand{\fcos}{{\color{blue!70!black}\cos}}
+\newcommand{\ftan}{{\color{blue!70!black}\tan}}
+\newcommand{\farctan}{{\color{blue!70!black}\arctan}}
+\newcommand{\fcosh}{{\color{blue!70!black}\cosh}}
+\newcommand{\fsinh}{{\color{blue!70!black}\sinh}}
+\newcommand{\fexp}{{\color{blue!70!black}\exp}}
+
+
+
+\newcommand{\fl}{{\color{blue!70!black}l}}
+\newcommand{\fS}{{\color{blue!70!black}S}}
+\newcommand{\fGamma}{{\color{blue!70!black}\Gamma}}
+\newcommand{\fmu}{{\color{blue!70!black}\mu}}
+\newcommand{\fphi}{{\color{blue!70!black}\phi}}
+\newcommand{\fu}{{\color{blue!70!black}u}}
+\newcommand{\fb}{{\color{blue!70!black}b}}
+
+\newcommand{\fG}{{\color{blue!70!black}G}}
+\newcommand{\fvG}{{\color{blue!70!black}\mathcal{G}}}
+\newcommand{\fs}{{\color{blue!70!black}s}}
+\newcommand{\fT}{{\color{blue!70!black}T}}
+\newcommand{\fB}{{\color{blue!70!black}B}}
+\newcommand{\fvv}{\vec{\color{blue!70!black}v}}
+\newcommand{\ff}{{\color{blue!70!black}f}}
+\newcommand{\detg}{\sqrt{-{\color{blue!70!black}\fg} } }
+\newcommand{\fC}{{\color{blue!70!black}C}}
+\newcommand{\fepsilon}{{\color{blue!70!black}\varepsilon}}
+\newcommand{\fnu}{{\color{blue!70!black}\nu}}
+\newcommand{\fF}{{\color{blue!70!black}F}}
+\newcommand{\fchi}{{\color{blue!70!black}\chi}}
+
+\newcommand{\finfty}{{\color{blue!70!black}\infty}}
+
+%%%%%%%%%%%%%% Operators
+
+\newcommand{\oupdelta}{{\color{blue!70!black}\updelta}}
+\newcommand{\ovary}{{\color{blue!70!black}\updelta}}
+\newcommand{\osum}{{\opcolor{blue!70!black}{\sum}}}
+\newcommand{\ooint}{{\opcolor{blue!70!black}{\sum}}}
+\newcommand{\opartial}{{\color{blue!70!black}\partial}}
+%%%%%%%%%%%%%% indecies
+
+\newcommand{\nni}{{\color{red!70!black}i}}
+\newcommand{\nnj}{{\color{red!70!black}j}}
+\newcommand{\nk}{{\color{red!70!black}k}}
+\newcommand{\nalpha}{{\color{red!70!black}\alpha}}
+\newcommand{\nbeta}{{\color{red!70!black}\beta}}
+\newcommand{\ngamma}{{\color{red!70!black}\gamma}}
+\newcommand{\nm}{{\color{red!70!black}m}}
+\newcommand{\nmu}{{\color{red!70!black}\mu}}
+\newcommand{\nmub[1]}{\bar{\nmu}_{#1}}
+
+\newcommand{\nn}{{\color{red!70!black}n}}
+\newcommand{\nl}{{\color{red!70!black}l}}
+
+
+\newcommand{\na}{{\color{red!70!black}a}}
+\newcommand{\nta}{{\color{red!70!black}\tilde{a} } }
+\newcommand{\nb}{{\color{red!70!black}b } }
+\newcommand{\ntb}{{\color{red!70!black}\tilde{b}} }
+
+%---
+\newcommand{\iit}{{\color{red!70!black}t}}
+\newcommand{\ir}{{\color{red!70!black}r}}
+\newcommand{\itheta}{{\color{red!70!black}\theta}}
+\newcommand{\iphi}{{\color{red!70!black}\varphi}}
+\newcommand{\ia}{{\color{red!70!black}a}}
+\newcommand{\ib}{{\color{red!70!black}b}}
+\newcommand{\ic}{{\color{red!70!black}c}}
+\newcommand{\id}{{\color{red!70!black}d}}
+\newcommand{\ie}{{\color{red!70!black}e}}
+\newcommand{\iif}{{\color{red!70!black}f}}
+\newcommand{\ii}{{\color{red!70!black}i}}
+\newcommand{\iij}{{\color{red!70!black}j}}
+\newcommand{\iin}{{\color{red!70!black}n}}
+\newcommand{\iim}{{\color{red!70!black}m}}
+\newcommand{\il}{{\color{red!70!black}l}}
+\newcommand{\ik}{{\color{red!70!black}k}}
+\newcommand{\ialpha}{{\color{red!70!black}\alpha}}
+
+
+
+\newcommand{\miin}{{\color{red!70!black}\boldsymbol{n}}}
+\newcommand{\mim}{{\color{red!70!black}\boldsymbol{m}}}
+
+
+%%%%%%%%%%%%%% derivatives
+
+
+\newcommand{\npartial}{{\color{blue!70!black}\partial}}
+\newcommand{\tpartial}{{\color{blue!70!black}\partial_{\ct}}}
+\newcommand{\dcphi}{\dot{\cphi}}
+\newcommand{\ddcphi}{\ddot{\cphi}}
+\newcommand{\dcA}{\dot{\cA}}
+\newcommand{\ddcA}{\ddot{\cA}}
+\newcommand{\dnq}{\dot{\nnq}}
+
+\newcommand{\dcphii}{\dot{\cphi}_{\nni}}
+\newcommand{\ddcphii}{\ddot{\cphi}_{\nni}}
+\newcommand{\dcAi}{\dot{\cA}_{\nni}}
+\newcommand{\ddcAi}{\ddot{\cA}_{\nni}}
+\newcommand{\dnqi}{\dot{\nnq}_{\nni}}
+%\newcommand{\partie[1]}{ \npartial_{\bar{\nmu}_{\scriptscriptstyle{#1}}}}
+\newcommand{\partie[1]}{ \npartial_{\bar{\nmu}_{#1}}}
+
+\newcommand{\da}{\dot{\fa}}
+\newcommand{\dda}{\ddot{\fa}}
+\newcommand{\ddda}{\fa^{(3)}}
+\newcommand{\dddda}{\fa^{(4)}}
+\newcommand{\dN}{\dot{\fN}}
+\newcommand{\ddN}{\ddot{\fN}}
+\newcommand{\dddN}{\fN^{(3)}}
+\newcommand{\dA}{\dot{\fA_{\phantom{,}}}\!}
+%\newcommand{\ddA}{\color{blue!70!black}\ddot{A}}
+\newcommand{\ddA}{{\ddot{\fA_{\phantom{,}}}}\! }%\color{gray}
+\newcommand{\dmu}{\dot{\fmu}}
+\newcommand{\du}{\dot{\fu}}
+\newcommand{\ddu}{\ddot{\fu}}
+\newcommand{\dddu}{\fu^{(3)}}
+\newcommand{\dphi}{\dot{\fphi}}
+\newcommand{\dvA}{\dot{\fvA_{\phantom{a}}}\!\!}
+\newcommand{\ddvA}{\ddot{\fvA_{\phantom{a}}}\!\!}
+\newcommand{\depsilon}{\dot{\fepsilon}}
+
+%%%%%%%%%%%%%% special variants
+
+\newcommand{\vv}{v}
+\newcommand{\MM}{M}
+\newcommand{\va}{{\color{red!70!black}\mathrm{a}}}
+\newcommand{\vV}{{\color{violet!80!black}V}}
