@@ -40,7 +40,24 @@ int main(int argc, char** argv)
         }
     }
     return 0;
+};
+
+//example for function in cpp
+void pred_corr(double x[],double h,int i,double dxdt[])
+{
+    double
+    gam=1.,
+    beta=2.
+    ;
+    double n =7;
+    //predictor step
+    dxdt[i]=beta*x[i-tau]/(1+pow(x[i-tau],n))-gam*x[i];
+    x[i+1]=x[i]+h/12.*(23.*dxdt[i]-16.*dxdt[i-1]+5.*dxdt[i-2]);
+    //corrector step
+    dxdt[i+1]=beta*x[i+1-tau]/(1+pow(x[i+1-tau],n))-gam*x[i+1];
+    x[i+1]=x[i]+h/12.*(5.*dxdt[i+1]+8.*dxdt[i]-dxdt[i-1]);
 }
+;
 @
 ```
 
