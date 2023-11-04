@@ -42,7 +42,7 @@ int main(int argc, char** argv)
     return 0;
 };
 
-//example for function in cpp
+//example function in cpp
 void pred_corr(double x[],double h,int i,double dxdt[])
 {
     double
