@@ -2,11 +2,43 @@
 \input{general-preamble.tex}
 \input{color-symbols.tex}
 \begin{document}%\selectlanguage{english}
+\section{Problem Set I solving wave equation}
+
+\begin{align}
+	\frac{\opartial^2\nphi}{\opartial^2\ct} = c^2\frac{\opartial^2\nphi}{\opartial^2\cx}
+\end{align}
+
+\subsection{fully first order formulation}
+
+\begin{align}
+	\neta = \nphi_{,\ct}, \quad \nchi = \nphi_{,\cx}
+\end{align}
 
 
 
+$ \neta(\ct,\cx) \nchi(\ct,\cx) \vfu(\nphi,\neta,\nchi) $
+
+
+\begin{align}
+	\vfu_{,\ct}+\MA\vfu_{,\cx}=\vfS
+\end{align}
+
+
+
+\subsection{initial condition}
+
+\begin{align}
+	\nphi(0, \cx)=e^{\fsin^2\left(\frac{\pi \cx}{L}\right)} -1, \quad 0 \leq \cx \leq L
+\end{align}
+with periodic condition:
+\begin{align}
+	\nphi(\ct,\cx) = \nphi(\ct, \cx \pm L)
+\end{align}
+
+
+\section{Program}
 \begin{minted}{cpp}
 
 
-\end{minted}{cpp}
+\end{minted}
 \end{document}
