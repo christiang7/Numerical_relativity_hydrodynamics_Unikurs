@@ -62,10 +62,23 @@ void pred_corr(double x[],double h,int i,double dxdt[])
 	dxdt[i]=beta*x[i-tau]/(1+pow(x[i-tau],n))-gam*x[i];
 	x[i+1]=x[i]+h/12.*(23.*dxdt[i]-16.*dxdt[i-1]+5.*dxdt[i-2]);
 	//corrector step
-	dxdt[i+1]=beta*x[i+1-tau]/(1+pow(x[i+1-tau],n))-gam*x[i+1];
-	x[i+1]=x[i]+h/12.*(5.*dxdt[i+1]+8.*dxdt[i]-dxdt[i-1]);
-}
-;
+	dxdt[i+1]=beta*x[i+1-tau]/(1+pow(x[i+1-tau],n))-gam*x[i+1]; x[i+1]=x[i]+h/12.*(5.*dxdt[i+1]+8.*dxdt[i]-dxdt[i-1]);
+};
+
+//example function in cpp
+void pred_corr(double x[],double h,int i,double dxdt[])
+{
+	double
+	gam=1.,
+	beta=2.
+	;
+	double n =7;
+	//predictor step
+	dxdt[i]=beta*x[i-tau]/(1+pow(x[i-tau],n))-gam*x[i];
+	x[i+1]=x[i]+h/12.*(23.*dxdt[i]-16.*dxdt[i-1]+5.*dxdt[i-2]);
+	//corrector step
+	dxdt[i+1]=beta*x[i+1-tau]/(1+pow(x[i+1-tau],n))-gam*x[i+1]; x[i+1]=x[i]+h/12.*(5.*dxdt[i+1]+8.*dxdt[i]-dxdt[i-1]);
+};
 @
 ```
 
@@ -82,6 +95,7 @@ noweb.py -RProblem_Set_I_solve_wave_equation.tex Problem_Set_I_solve_wave_equati
 \documentclass[10pt,fleqn,reqno,a4paper]{article}
 \input{general-preamble.tex}
 \input{color-symbols.tex}
+\definecolor{lightgraycolor}{rgb}{0.95,0.95,0.95}
 \begin{document}%\selectlanguage{english}
 \section{Problem Set I solving wave equation}
 
@@ -118,7 +132,7 @@ with periodic condition:
 
 
 \section{Program}
-\begin{minted}{cpp}
+\begin{minted}[linenos=true,bgcolor=lightgraycolor,numberblanklines=true,showspaces=false,breaklines=true]{cpp}
 {{Problem_Set_I_solve_wave_equation.cpp}}
 \end{minted}
 \end{document}
