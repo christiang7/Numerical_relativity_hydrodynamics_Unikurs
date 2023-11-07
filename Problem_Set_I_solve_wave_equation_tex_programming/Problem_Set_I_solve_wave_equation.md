@@ -12,11 +12,11 @@ Created [2023-11-04]()
 
 ## Informations
 
-<object data="Numerical_relativity_hydrodynamics_Unikurs/#/Problem_Set_I_solve_wave_equation_tex_programming/ps1_NRII.pdf" type="application/pdf" width="100%" height="700px">
+<object data="#/Problem_Set_I_solve_wave_equation_tex_programming/ps1_NRII.pdf" type="application/pdf" width="100%" height="700px">
 	<p>Unable to display PDF file. <a href="/Problem_Set_I_solve_wave_equation_tex_programming/ps1_NRII.pdf">Download</a> instead.</p>
 </object>
 
-<object data="Numerical_relativity_hydrodynamics_Unikurs/#/Problem_Set_I_solve_wave_equation_tex_programming/Problem_Set_I_solve_wave_equation.pdf" type="application/pdf" width="100%" height="700px">
+<object data="#/Problem_Set_I_solve_wave_equation_tex_programming/Problem_Set_I_solve_wave_equation.pdf" type="application/pdf" width="100%" height="700px">
 	<p>Unable to display PDF file. <a href="/Problem_Set_I_solve_wave_equation_tex_programming/Problem_Set_I_solve_wave_equation.pdf">Download</a> instead.</p>
 </object>
 
