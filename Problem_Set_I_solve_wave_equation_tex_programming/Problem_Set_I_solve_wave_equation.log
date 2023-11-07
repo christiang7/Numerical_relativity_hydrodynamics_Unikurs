@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.12)  7 NOV 2023 21:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.12)  7 NOV 2023 21:16
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1066,7 +1066,13 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 
 (./_minted-Problem_Set_I_solve_wave_equation/manni.pygstyle)
-(./_minted-Problem_Set_I_solve_wave_equation/F92E09EE715CF4CABF0D7459617B0C2728
+runsystem(pygmentize -l 'cpp' -f latex -P commandprefix=PYG -F tokenmerge -P st
+ripnl='False' -o _minted-Problem_Set_I_solve_wave_equation/B3DBE09923D6A8AE200E
+737A6D13548528F1DA29D17583479DEF3FF682E9EEEC.pygtex Problem_Set_I_solve_wave_eq
+uation.pyg)...executed.
+
+
+(./_minted-Problem_Set_I_solve_wave_equation/B3DBE09923D6A8AE200E737A6D13548528
 F1DA29D17583479DEF3FF682E9EEEC.pygtex
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 .
@@ -1075,12 +1081,16 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 7.
-) [1
+)
+runsystem(rm _minted-Problem_Set_I_solve_wave_equation/F92E09EE715CF4CABF0D7459
+617B0C2728F1DA29D17583479DEF3FF682E9EEEC.pygtex)...executed.
+
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-m
-athsy.enc}] [2] (./Problem_Set_I_solve_wave_equation.aux)
+athsy.enc}] (./Problem_Set_I_solve_wave_equation.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
@@ -1092,13 +1102,13 @@ runsystem(rm Problem_Set_I_solve_wave_equation.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 29453 strings out of 477569
- 541036 string characters out of 5827656
- 1882759 words of memory out of 5000000
- 49420 multiletter control sequences out of 15000+600000
+ 29455 strings out of 477569
+ 541394 string characters out of 5827656
+ 1880759 words of memory out of 5000000
+ 49423 multiletter control sequences out of 15000+600000
  555812 words of font info for 70 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 89i,11n,90p,1050b,708s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,11n,90p,1050b,684s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/type1/pu
@@ -1108,11 +1118,11 @@ mr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmtti10.pfb>
-Output written on Problem_Set_I_solve_wave_equation.pdf (2 pages, 211818 bytes)
-.
+Output written on Problem_Set_I_solve_wave_equation.pdf (1 page, 210893 bytes).
+
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
+ 115 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
  45 words of extra memory for PDF output out of 10000 (max. 10000000)
 
