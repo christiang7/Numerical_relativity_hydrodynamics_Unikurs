@@ -1,6 +1,9 @@
 # Numerical relativity hydrodynamics Unikurs
 Repository for uni course at university Potsdam
 
+Kurs: Numerical Relativity II: Hydrodynamics | Moodle.UP
+https://moodle2.uni-potsdam.de/course/view.php?id=38402
+
 ## Exercises
 
 [Problem Set I solve wave equation](Problem_Set_I_solve_wave_equation_tex_programming/Problem_Set_I_solve_wave_equation.md)
