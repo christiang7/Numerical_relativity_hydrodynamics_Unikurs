@@ -8,8 +8,13 @@
 
 \PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{argc}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{char}\PYG{o}{**}\PYG{+w}{ }\PYG{n}{argv}\PYG{p}{)}
 \PYG{p}{\PYGZob{}}
-\PYG{+w}{	}\PYG{c+c1}{// Declaring 2D array}
-\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{arr}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{][}\PYG{l+m+mi}{4}\PYG{p}{];}
+
+\PYG{+w}{    }\PYG{n}{init}\PYG{p}{();}
+
+
+\PYG{+w}{    }\PYG{c+c1}{// cases for solver}
+\PYG{+w}{    }\PYG{c+c1}{//\PYGZob{}\PYGZob{}solving method second order\PYGZcb{}\PYGZcb{}}
+\PYG{+w}{    }\PYG{c+c1}{//\PYGZob{}\PYGZob{}solving method forth order\PYGZcb{}\PYGZcb{}}
 
 \PYG{+w}{	}\PYG{c+c1}{// Initialize 2D array using loop}
 \PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{l+m+mi}{4}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
@@ -19,6 +24,17 @@
 \PYG{+w}{	}\PYG{p}{\PYGZcb{}}
 \PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
 \PYG{p}{\PYGZcb{};}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{initalCondition}\PYG{p}{()\PYGZob{}}
+
+\PYG{p}{\PYGZcb{}}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{init}\PYG{p}{()\PYGZob{}}
+\PYG{+w}{    }\PYG{c+c1}{// Declaring 2D array}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{arr}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{][}\PYG{l+m+mi}{4}\PYG{p}{];}
+\PYG{+w}{    }\PYG{n}{initalCondition}\PYG{p}{();}
+
+\PYG{p}{\PYGZcb{}}
+
 
 \PYG{c+c1}{//example function in cpp}
 \PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{pred\PYGZus{}corr}\PYG{p}{(}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{[],}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{h}\PYG{p}{,}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{,}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{dxdt}\PYG{p}{[])}

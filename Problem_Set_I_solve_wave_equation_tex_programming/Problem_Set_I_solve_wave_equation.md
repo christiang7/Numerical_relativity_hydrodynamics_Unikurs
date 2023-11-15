@@ -38,8 +38,13 @@ using namespace std ;
 
 int main(int argc, char** argv)
 {
-	// Declaring 2D array
-	int arr[4][4];
+
+    init();
+
+
+    // cases for solver
+    //{{solving method second order}}
+    //{{solving method forth order}}
 
 	// Initialize 2D array using loop
 	for (int i = 0; i < 4; i++) {
@@ -49,6 +54,10 @@ int main(int argc, char** argv)
 	}
 	return 0;
 };
+
+{{initial condition}}
+{{init}}
+
 
 //example function in cpp
 void pred_corr(double x[],double h,int i,double dxdt[])
@@ -66,6 +75,28 @@ void pred_corr(double x[],double h,int i,double dxdt[])
 };
 @
 ```
+
+```cpp
+{{init}}=
+void init(){
+    // Declaring 2D array
+	int arr[4][4];
+    initalCondition();
+
+}
+@
+```
+
+
+```cpp
+{{initial condition}}=
+void initalCondition(){
+
+}
+@
+```
+
+
 
 ## Latex File
 
