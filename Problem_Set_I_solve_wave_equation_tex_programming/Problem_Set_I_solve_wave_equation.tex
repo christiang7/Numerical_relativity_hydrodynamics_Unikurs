@@ -46,6 +46,32 @@ with periodic condition:
 #include <iostream>
 using namespace std ;
 
+void initalCondition(){
+    for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			arr[i][j] = i + j;
+		}
+	}
+}
+void output(){
+    // Declaring 2D array
+    cout << h*(i+1)-taureal << ' ' << x[i+1] << ' ' << x[i+1-tau] << ' ' << x[i+1-tau-tau] << endl;
+
+}
+void init(){
+    // Declaring 2D array
+	int arr[4][4];
+    initalCondition();
+
+}
+double // Kommentar
+    x[4][4],
+    t[4][4] ,
+    phi[4][4],
+    dx,
+    dt
+    ;
+
 int main(int argc, char** argv)
 {
 
@@ -65,15 +91,6 @@ int main(int argc, char** argv)
 	return 0;
 };
 
-void initalCondition(){
-
-}
-void init(){
-    // Declaring 2D array
-	int arr[4][4];
-    initalCondition();
-
-}
 
 
 //example function in cpp
