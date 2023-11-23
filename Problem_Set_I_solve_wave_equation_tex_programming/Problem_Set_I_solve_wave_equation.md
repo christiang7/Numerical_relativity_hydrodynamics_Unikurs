@@ -4,11 +4,14 @@ Created [2023-11-04]()
 - [X] **Problem Set I solve wave equation**
 	- [X] Doing
         - [ ] A.2. Programming
+            - [X] all fields have to get two dimensions not just one, because, the time step needs two points
+            - [ ] implement the midpoints for x positions
             - [ ] Forward Euler method
             - [ ] boundaryCondition add ghost points
                 - [ ] add more points to the arrays (left two and right two), but plotting only the real points
                 - [ ] rewrite the for loops
-                - [ ] implement the switiching between these points
+                - [ ] implement the switching between these points
+                - [ ] split the code for the points for not ghost points and the function for the ghost point calculation
             - [ ] Runge Kutter method
 	- [X] Backlog
         - [ ] A.1.
@@ -18,7 +21,7 @@ Created [2023-11-04]()
 ## Features
         - [X] calc initial condition
         - [X] gnuplot
-        - [X] flexibel for inital condition with start values
+        - [X] flexible for initial condition with start values
         - [X] writing script for compilation
 
 ## Informations
@@ -31,19 +34,15 @@ Created [2023-11-04]()
 	<p>Unable to display PDF file. <a href="Problem_Set_I_solve_wave_equation_tex_programming/Problem_Set_I_solve_wave_equation.pdf">Download</a> instead.</p>
 </object>
 
+Euler method - Wikipedia
+https://en.wikipedia.org/wiki/Euler_method
+Runge–Kutta methods - Wikipedia
+https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods
+1.2: Forward Euler method - Mathematics LibreTexts
+https://math.libretexts.org/Bookshelves/Differential_Equations/Numerically_Solving_Ordinary_Differential_Equations_(Brorson)/01%3A_Chapters/1.02%3A_Forward_Euler_method
+
+
 ## Programming
-
-```bash
-noweb.py -RProblem_Set_I_solve_wave_equation.cpp Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.cpp && noweb.py -RProblem_Set_I_solve_wave_equation.tex Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.tex && pdflatex -shell-escape Problem_Set_I_solve_wave_equation.tex && echo 'fertig'
-```
-
-```bash
-noweb.py -RProblem_Set_I_solve_wave_equation.cpp Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.cpp && g++ -o Problem_Set_I_solve_wave_equation Problem_Set_I_solve_wave_equation.cpp && ./Problem_Set_I_solve_wave_equation > 2023-11-16-data.dat
-```
-
-```bash
-noweb.py -RProblem_Set_I_solve_wave_equation.cpp Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.cpp && g++ -o Problem_Set_I_solve_wave_equation Problem_Set_I_solve_wave_equation.cpp && ./Problem_Set_I_solve_wave_equation | gnuplot -p -e "plot '-' using 2:3"
-```
 
 ```bash
 noweb.py -Rlaunch.sh Problem_Set_I_solve_wave_equation.md > launch.sh && ./launch.sh
@@ -58,10 +57,10 @@ noweb.py -RProblem_Set_I_solve_wave_equation.tex Problem_Set_I_solve_wave_equati
 noweb.py -RProblem_Set_I_solve_wave_equation.cpp Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.cpp && g++ -o Problem_Set_I_solve_wave_equation Problem_Set_I_solve_wave_equation.cpp
 
 # live gnuplot plot
-./Problem_Set_I_solve_wave_equation 0.01 | gnuplot -p -e "plot '-' using 2:3"
+#./Problem_Set_I_solve_wave_equation 0.01 | gnuplot -p -e "plot '-' using 2:3"
 
-#./Problem_Set_I_solve_wave_equation 0.01 > 2023-11-16-data.dat
-#gnuplot -p -e "plot '2023-11-16-data.dat' using 2:3"
+./Problem_Set_I_solve_wave_equation 0.01 > 2023-11-16-data.dat
+gnuplot -p -e "plot '2023-11-16-data.dat' using 2:3"
 @
 ```
 
@@ -97,20 +96,24 @@ int main(int argc, char** argv)
     const double timeLength = 1;
     const double dt = CMax*dx/CSpeed;
     const int nGhosts = 4;
-    const int xSteps = int( L / dx );
+    const int xSteps = int( L / dx ) + nGhosts;
     const int tSteps = int (timeLength / dt );
 
     double //
     x[xSteps],
     t[tSteps],
-    phi[xSteps],
-    eta[xSteps],
-    chi[xSteps]
+    phi[xSteps][2],
+    chi[xSteps][2],
+    eta[xSteps][2]
     ;
+
+    cout << "# parameters " << dx << ' ' << dt << ' ' <<  xSteps << endl;
+
     init(t, x, phi, eta, chi, xSteps, dx, L);
 
     // cases for solver
-    solvingWaveEquation(phi, eta, chi, t, dt, x, dx, CSpeed, xSteps);
+    //solvingWaveEquation(phi, eta, chi, t, dt, x, dx, CSpeed, xSteps);
+
     //{{solving wave equation}}
     //{{second order spatial derivative}}
     //{{forwad Euler method}}
@@ -123,17 +126,17 @@ int main(int argc, char** argv)
 
 ```cpp
 {{solving wave equation}}=
-void solvingWaveEquation(double phi[], double eta[], double chi[], double t[], double dt, double x[], double dx, const double CSpeed, const int xSteps){
+void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], double t[], double dt, double x[], double dx, const double CSpeed, int xSteps){
     //for (int j = 0; j < tSteps; j=j+1) {
     for (int j = 0; j < 10; j=j+1) {
+        t[j]=j*dt;
         for (int i = 0; i < xSteps; i=i+1) {
-            forwardEulerMethod(phi, eta, j, dx, i, dt, 1);
-            forwardEulerMethod(eta, chi, j, dx, i, dt, pow(CSpeed, 2));
-            forwardEulerMethod(chi, eta, j, dx, i, dt, 1);
+            forwardEulerMethod(phi, eta, j, dt, i, dx, 1);
+            forwardEulerMethod(eta, chi, j, dt, i, dx, pow(CSpeed, 2));
+            forwardEulerMethod(chi, eta, j, dt, i, dx, 1);
             output(j, i, t, x, phi);
         };
-        t[j]=j*dt;
-        boundaryCondition(phi, eta, chi, xSteps);
+        boundaryCondition(xSteps, phi, eta, chi);
         output(j, xSteps, t, x, phi);
     };
 };
@@ -142,8 +145,9 @@ void solvingWaveEquation(double phi[], double eta[], double chi[], double t[], d
 
 ```cpp
 {{forwad Euler method}}=
-void forwardEulerMethod(double funct[], double funct2[], int ti, double dt, int xi, double dx, double factor){
-    funct[ti+1]=funct[ti]+factor*dt*secondOrderSpatial(funct2, xi, dx);
+void forwardEulerMethod(double funct[][2], double funct2[][2], int ti, double dt, int xi, double dx, double factor){
+    //funct[xi][1]=funct[xi][0]+factor*dt*secondOrderSpatial(funct2, xi, dx);
+    funct[xi][1]=funct[xi][0]+factor*dt*(funct2[xi+1][0]-funct2[xi-1][0])/(2*dx);
 };
 @
 ```
@@ -151,8 +155,8 @@ void forwardEulerMethod(double funct[], double funct2[], int ti, double dt, int 
 
 ```cpp
 {{second order spatial derivative}}=
-double secondOrderSpatial(double funct[], int xi, double dx){
-    return (funct[xi+1]-funct[xi-1])/(2*dx);
+double secondOrderSpatial(int xSteps, double funct2[][2], int xi, double dx){
+    return (funct2[xi+1][0]-funct2[xi-1][0])/(2*dx);
 };
 @
 ```
@@ -161,9 +165,9 @@ double secondOrderSpatial(double funct[], int xi, double dx){
 
 ```cpp
 {{output}}=
-void output(int ti, int xi, double t[], double x[], double phi[]){
+void output(int ti, int xi, double t[], double x[], double phi[][2]){
     // t x phi
-    cout << t[ti] << ' ' << x[xi] << ' ' <<  phi[xi] << endl;
+    cout << t[ti] << ' ' << x[xi] << ' ' <<  phi[xi][ti] << endl;
 };
 @
 ```
@@ -171,41 +175,47 @@ void output(int ti, int xi, double t[], double x[], double phi[]){
 
 ```cpp
 {{init}}=
-void init(double t[], double x[], double phi[], double eta[], double chi[], int xSteps, double dx, double L){
+void init(double t[], double x[], double phi[][2], double eta[][2], double chi[][2], int xSteps, double dx, double L){
     t[0]=0;
     //x[0]=0;
-    for (int i = 0; i < xSteps; i=i+1) {
-        phi[i] = exp(pow(sin(M_PI/L*(i*dx)),2))-1;
-        eta[i] = phi[i];
-        chi[i] = phi[i];
+    for (int i = 0; i < xSteps-4; i=i+1) {
+        phi[i+2][0] = exp(pow(sin(M_PI/L*((i)*dx)),2))-1;
+        chi[i+2][0] = exp(pow(sin(M_PI/L*(i*dx)),2))*2*sin(M_PI/L*(i*dx))cos(M_PI/L*(i*dx))*M_PI/L;
+        eta[i+2][0] = chi[i+2][0];
         x[i]=i*dx;
-        output(0,i,t,x,phi);
+        output(0, i, t, x, phi);
 	}
 	x[xSteps]=xSteps*dx;
-    boundaryCondition(phi, eta, chi, xSteps);
-    output(0,xSteps,t,x,phi);
+    boundaryCondition(xSteps, phi, eta, chi);
+    output( 0, xSteps-4, t, x, phi);
 };
 @
 ```
 
 ```cpp
 {{boundaryCondition}}=
-void boundaryCondition(double phi[], double eta[], double chi[], int xSteps){
-    phi[xSteps] = phi[0];
-    eta[xSteps] = eta[0];
-    chi[xSteps] = chi[0];
+void boundaryCondition(int xSteps, double phi[][2], double eta[][2], double chi[][2]){
+    phi[xSteps][0] = phi[0][0];
+    eta[xSteps][0] = eta[0][0];
+    chi[xSteps][0] = chi[0][0];
+    phi[xSteps-1][0] = phi[1][0];
+    eta[xSteps-1][0] = eta[1][0];
+    chi[xSteps-1][0] = chi[1][0];
+    phi[xSteps-2][0] = phi[2][0];
+    eta[xSteps-2][0] = eta[2][0];
+    chi[xSteps-2][0] = chi[2][0];
 };
 @
 ```
 
 ```cpp
 {{function declaration}}=
-void output(int ti, int xi, double t[], double x[], double phi[]);
-void init(double t[], double x[], double phi[], double eta[], double chi[], int xSteps,  int dx, double L);
-void boundaryCondition(double phi[], double eta[], double chi[], int xSteps);
-double secondOrderSpatial(double funct[], int xi, double dx);
-void forwardEulerMethod(double funct[], double funct2[], int ti, double dt, int xi, double dx, double factor);
-void solvingWaveEquation(double phi[], double eta[], double chi[], double t[], double dt, double x[], double dx, const double CSpeed, const int xSteps);
+void output(int ti, int xi, double t[], double x[], double phi[][2]);
+void init(double t[], double x[], double phi[][2], double eta[][2], double chi[][2], int xSteps, double dx, double L);
+void boundaryCondition(int xSteps, double phi[][2], double eta[][2], double chi[][2]);
+double secondOrderSpatial(double funct2[][2], int xi, double dx);
+void forwardEulerMethod(double funct[][2], double funct2[][2], int ti, double dt, int xi, double dx, double factor);
+void solvingWaveEquation(int xSteps, double phi[][2], double eta[][2], double chi[][2], double t[], double dt, double x[], double dx, const double CSpeed);
 @
 ```
 
