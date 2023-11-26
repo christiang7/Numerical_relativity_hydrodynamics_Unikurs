@@ -15,18 +15,14 @@
 \PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{gnuplot}\PYG{p}{();}
 
 \PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{output}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{ti}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{xi}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{t}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{[],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{])\PYGZob{}}
-\PYG{+w}{    }\PYG{c+c1}{// t x phi}
-\PYG{+w}{    }\PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} t \PYGZlt{}\PYGZlt{} \PYGZsq{} \PYGZsq{} \PYGZlt{}\PYGZlt{} x[xi] \PYGZlt{}\PYGZlt{} \PYGZsq{} \PYGZsq{} \PYGZlt{}\PYGZlt{}  phi[xi][ti] \PYGZlt{}\PYGZlt{} endl;}
+\PYG{+w}{    }\PYG{c+c1}{// x phi}
 \PYG{+w}{    }\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{[}\PYG{n}{xi}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{  }\PYG{n}{phi}\PYG{p}{[}\PYG{n}{xi}\PYG{p}{][}\PYG{n}{ti}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{endl}\PYG{p}{;}
 \PYG{p}{\PYGZcb{};}
 
 \PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{init}\PYG{p}{(}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{t}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{[],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{eta}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{chi}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{xSteps}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{dx}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{L}\PYG{p}{)\PYGZob{}}
-\PYG{+w}{    }\PYG{c+c1}{//t=0;}
-\PYG{+w}{    }\PYG{c+c1}{//x[0]=0;}
 \PYG{+w}{    }\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}reset\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{endl}\PYG{p}{;}
 \PYG{+w}{    }\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}set xrange [0:1]\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{endl}\PYG{p}{;}
 \PYG{+w}{    }\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}set yrange [\PYGZhy{}10:10]\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{endl}\PYG{p}{;}
-\PYG{c+c1}{//    cout \PYGZlt{}\PYGZlt{} \PYGZdq{}set yrange [\PYGZhy{}2:2]\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
 \PYG{+w}{    }\PYG{n}{gnuplot}\PYG{p}{();}
 \PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{xSteps}\PYG{l+m+mi}{\PYGZhy{}2}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{=}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
 \PYG{+w}{        }\PYG{n}{phi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{exp}\PYG{p}{(}\PYG{n}{pow}\PYG{p}{(}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{M\PYGZus{}PI}\PYG{o}{/}\PYG{n}{L}\PYG{o}{*}\PYG{p}{((}\PYG{n}{i}\PYG{l+m+mi}{\PYGZhy{}2}\PYG{p}{)}\PYG{o}{*}\PYG{n}{dx}\PYG{p}{)),}\PYG{l+m+mi}{2}\PYG{p}{))}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{;}
@@ -35,22 +31,17 @@
 \PYG{+w}{        }\PYG{c+c1}{//chi[i][0] = (i\PYGZhy{}2)*dx;}
 \PYG{+w}{        }\PYG{c+c1}{//chi[i][0] = sin(M\PYGZus{}PI/L*((i\PYGZhy{}2)*dx));}
 \PYG{+w}{        }\PYG{c+c1}{//chi[i][0] = 1;}
-\PYG{+w}{        }\PYG{c+c1}{//}
-\PYG{+w}{        }\PYG{c+c1}{//eta[i][0] = chi[i][0];}
+\PYG{+w}{        }\PYG{n}{eta}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{chi}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{];}
 \PYG{+w}{        }\PYG{c+c1}{//eta[i][0] = 0;}
-\PYG{+w}{        }\PYG{n}{eta}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{pow}\PYG{p}{(}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{M\PYGZus{}PI}\PYG{o}{/}\PYG{n}{L}\PYG{o}{*}\PYG{p}{((}\PYG{n}{i}\PYG{l+m+mi}{\PYGZhy{}2}\PYG{p}{)}\PYG{o}{*}\PYG{n}{dx}\PYG{p}{)),}\PYG{l+m+mi}{2}\PYG{p}{);}
+\PYG{+w}{        }\PYG{c+c1}{//eta[i][0] = pow(sin(M\PYGZus{}PI/L*((i\PYGZhy{}2)*dx)),2);}
 \PYG{+w}{        }\PYG{c+c1}{//eta[i][0] = exp(pow(sin(M\PYGZus{}PI/L*((i\PYGZhy{}2)*dx)),2))*2*sin(M\PYGZus{}PI/L*((i\PYGZhy{}2)*dx))*cos(M\PYGZus{}PI/L*((i\PYGZhy{}2)*dx))*M\PYGZus{}PI/L;}
 \PYG{+w}{        }\PYG{c+c1}{//eta[i][0] = 1;}
 \PYG{+w}{        }\PYG{n}{x}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{i}\PYG{l+m+mi}{\PYGZhy{}2}\PYG{p}{)}\PYG{o}{*}\PYG{n}{dx}\PYG{p}{;}
 \PYG{+w}{        }\PYG{n}{output}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{t}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{);}
 \PYG{+w}{	}\PYG{p}{\PYGZcb{}}
 \PYG{+w}{	}\PYG{n}{x}\PYG{p}{[}\PYG{n}{xSteps}\PYG{l+m+mi}{\PYGZhy{}2}\PYG{p}{]}\PYG{o}{=}\PYG{p}{(}\PYG{n}{xSteps}\PYG{l+m+mi}{\PYGZhy{}4}\PYG{p}{)}\PYG{o}{*}\PYG{n}{dx}\PYG{p}{;}
-\PYG{+w}{    }\PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} t \PYGZlt{}\PYGZlt{} endl;}
 \PYG{+w}{    }\PYG{n}{boundaryCondition}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{xSteps}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{eta}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{chi}\PYG{p}{);}
-\PYG{+w}{    }\PYG{c+c1}{//t=0;}
-\PYG{+w}{    }\PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} t \PYGZlt{}\PYGZlt{} endl;}
 \PYG{+w}{    }\PYG{n}{output}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{xSteps}\PYG{l+m+mi}{\PYGZhy{}2}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{t}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{);}
-\PYG{+w}{    }\PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{} \PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
 \PYG{p}{\PYGZcb{};}
 
 \PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{boundaryCondition}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{ti}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{xSteps}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{eta}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{chi}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{])\PYGZob{}}
@@ -71,20 +62,18 @@
 \PYG{+w}{    }\PYG{n}{chi}\PYG{p}{[}\PYG{n}{xSteps}\PYG{p}{][}\PYG{n}{ti}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{chi}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{][}\PYG{n}{ti}\PYG{p}{];}
 \PYG{p}{\PYGZcb{};}
 
-\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n+nf}{secondOrderSpatial}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{xSteps}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{funct2}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{xi}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{dx}\PYG{p}{)\PYGZob{}}
+\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n+nf}{secondOrderSpatial}\PYG{p}{(}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{funct2}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{xi}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{dx}\PYG{p}{)\PYGZob{}}
 \PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{funct2}\PYG{p}{[}\PYG{n}{xi}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{funct2}\PYG{p}{[}\PYG{n}{xi}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{])}\PYG{o}{/}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{dx}\PYG{p}{);}
 \PYG{p}{\PYGZcb{};}
 
 \PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{forwardEulerMethod}\PYG{p}{(}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{funct}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{funct2}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{dt}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{xi}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{dx}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{factor}\PYG{p}{)\PYGZob{}}
-\PYG{+w}{    }\PYG{c+c1}{//funct[xi][1]=funct[xi][0]+factor*dt*secondOrderSpatial(funct2, xi, dx);}
-\PYG{+w}{    }\PYG{n}{funct}\PYG{p}{[}\PYG{n}{xi}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{=}\PYG{n}{funct}\PYG{p}{[}\PYG{n}{xi}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{n}{factor}\PYG{o}{*}\PYG{n}{dt}\PYG{o}{*}\PYG{p}{(}\PYG{n}{funct2}\PYG{p}{[}\PYG{n}{xi}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{funct2}\PYG{p}{[}\PYG{n}{xi}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{])}\PYG{o}{/}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{dx}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{funct}\PYG{p}{[}\PYG{n}{xi}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{=}\PYG{n}{funct}\PYG{p}{[}\PYG{n}{xi}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{+}\PYG{n}{factor}\PYG{o}{*}\PYG{n}{dt}\PYG{o}{*}\PYG{n}{secondOrderSpatial}\PYG{p}{(}\PYG{n}{funct2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{xi}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dx}\PYG{p}{);}
+\PYG{+w}{    }\PYG{c+c1}{//funct[xi][1]=funct[xi][0]+factor*dt*(funct2[xi+1][0]\PYGZhy{}funct2[xi\PYGZhy{}1][0])/(2*dx);}
 \PYG{p}{\PYGZcb{};}
 
 \PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{solvingWaveEquation}\PYG{p}{(}\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{eta}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{chi}\PYG{p}{[][}\PYG{l+m+mi}{2}\PYG{p}{],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{t}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{dt}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{[],}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{dx}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{CSpeed}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{xSteps}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{tSteps}\PYG{p}{)\PYGZob{}}
 \PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{tSteps}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{o}{=}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{    }\PYG{c+c1}{//for (int j = 1; j \PYGZlt{} 40000; j=j+1) \PYGZob{}}
 \PYG{+w}{        }\PYG{n}{t}\PYG{o}{=}\PYG{n}{j}\PYG{o}{*}\PYG{n}{dt}\PYG{p}{;}
-\PYG{+w}{        }\PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{} \PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
 \PYG{+w}{        }\PYG{n}{gnuplot}\PYG{p}{();}
 \PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{xSteps}\PYG{l+m+mi}{\PYGZhy{}2}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{=}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
 \PYG{+w}{            }\PYG{n}{forwardEulerMethod}\PYG{p}{(}\PYG{n}{phi}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{eta}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dt}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dx}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
@@ -95,9 +84,7 @@
 \PYG{+w}{        }\PYG{n}{boundaryCondition}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{xSteps}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{eta}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{chi}\PYG{p}{);}
 \PYG{+w}{        }\PYG{n}{output}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{xSteps}\PYG{l+m+mi}{\PYGZhy{}2}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{t}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{);}
 \PYG{+w}{        }\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}elpased time\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{endl}\PYG{p}{;}
-\PYG{+w}{        }\PYG{c+c1}{//gnuplot();}
 \PYG{+w}{        }\PYG{n}{updateFunc}\PYG{p}{(}\PYG{n}{xSteps}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{eta}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{chi}\PYG{p}{);}
-\PYG{+w}{        }\PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{} \PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
 \PYG{+w}{    }\PYG{p}{\PYGZcb{};}
 \PYG{p}{\PYGZcb{};}
 
@@ -110,7 +97,6 @@
 \PYG{p}{\PYGZcb{};}
 
 \PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{gnuplot}\PYG{p}{()\PYGZob{}}
-\PYG{+w}{    }\PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}set term qt\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
 \PYG{+w}{    }\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}plot \PYGZsq{}\PYGZhy{}\PYGZsq{} w l\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{endl}\PYG{p}{;}
 \PYG{p}{\PYGZcb{};}
 
@@ -129,17 +115,13 @@
 
 \PYG{+w}{    }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{c+c1}{//}
 \PYG{+w}{    }\PYG{n}{x}\PYG{p}{[}\PYG{n}{xSteps}\PYG{p}{],}
-\PYG{+w}{    }\PYG{c+c1}{//t[tSteps],}
 \PYG{+w}{    }\PYG{n}{t}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,}
 \PYG{+w}{    }\PYG{n}{phi}\PYG{p}{[}\PYG{n}{xSteps}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{],}
 \PYG{+w}{    }\PYG{n}{chi}\PYG{p}{[}\PYG{n}{xSteps}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{],}
 \PYG{+w}{    }\PYG{n}{eta}\PYG{p}{[}\PYG{n}{xSteps}\PYG{p}{][}\PYG{l+m+mi}{2}\PYG{p}{]}
-\PYG{+w}{    }\PYG{c+c1}{//phiGhost[nGhosts][2],}
-\PYG{+w}{    }\PYG{c+c1}{//chiGhost[nGhosts][2],}
-\PYG{+w}{    }\PYG{c+c1}{//etaGhost[nGhosts][2]}
 \PYG{+w}{    }\PYG{p}{;}
 
-\PYG{+w}{    }\PYG{c+c1}{//cout \PYGZlt{}\PYGZlt{} \PYGZdq{}\PYGZsh{} parameters \PYGZdq{} \PYGZlt{}\PYGZlt{} dx \PYGZlt{}\PYGZlt{} \PYGZsq{} \PYGZsq{} \PYGZlt{}\PYGZlt{} dt \PYGZlt{}\PYGZlt{} \PYGZsq{} \PYGZsq{} \PYGZlt{}\PYGZlt{}  xSteps \PYGZlt{}\PYGZlt{} endl;}
+\PYG{+w}{    }\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZsh{} parameters \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dx}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dt}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s+sc}{\PYGZsq{} \PYGZsq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{  }\PYG{n}{xSteps}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{endl}\PYG{p}{;}
 
 \PYG{+w}{    }\PYG{n}{init}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{phi}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{eta}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{chi}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{xSteps}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dx}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{L}\PYG{p}{);}
 

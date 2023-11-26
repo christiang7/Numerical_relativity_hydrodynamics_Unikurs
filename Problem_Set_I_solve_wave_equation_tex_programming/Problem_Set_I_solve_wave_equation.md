@@ -120,26 +120,20 @@ int main(int argc, char** argv)
 
     double //
     x[xSteps],
-    //t[tSteps],
     t=0,
     phi[xSteps][2],
     chi[xSteps][2],
     eta[xSteps][2]
-    //phiGhost[nGhosts][2],
-    //chiGhost[nGhosts][2],
-    //etaGhost[nGhosts][2]
     ;
 
-    //cout << "# parameters " << dx << ' ' << dt << ' ' <<  xSteps << endl;
+    cout << "# parameters " << dx << ' ' << dt << ' ' <<  xSteps << endl;
 
     init(t, x, phi, eta, chi, xSteps, dx, L);
 
     // cases for solver
+    //{{solving wave equation}}
     solvingWaveEquation(phi, eta, chi, t, dt, x, dx, CSpeed, xSteps, tSteps);
 
-    //{{solving wave equation}}
-    //{{second order spatial derivative}}
-    //{{forwad Euler method}}
     //{{forth order spatial derivative}}
     //{{Runge Kutter solver}}
 	return 0;
@@ -151,9 +145,7 @@ int main(int argc, char** argv)
 {{solving wave equation}}=
 void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], double t, double dt, double x[], double dx, double CSpeed, int xSteps, int tSteps){
     for (int j = 1; j < tSteps; j=j+1) {
-    //for (int j = 1; j < 40000; j=j+1) {
         t=j*dt;
-        //cout << " " << endl;
         gnuplot();
         for (int i = 2; i < xSteps-2; i=i+1) {
             forwardEulerMethod(phi, eta, dt, i, dx, 1);
@@ -164,9 +156,7 @@ void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], doub
         boundaryCondition(1, xSteps, phi, eta, chi);
         output(1, (xSteps-2), t, x, phi);
         cout << "elpased time" << endl;
-        //gnuplot();
         updateFunc(xSteps, phi, eta, chi);
-        //cout << " " << endl;
     };
 };
 @
@@ -175,8 +165,7 @@ void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], doub
 ```cpp
 {{forwad Euler method}}=
 void forwardEulerMethod(double funct[][2], double funct2[][2], double dt, int xi, double dx, double factor){
-    //funct[xi][1]=funct[xi][0]+factor*dt*secondOrderSpatial(funct2, xi, dx);
-    funct[xi][1]=funct[xi][0]+factor*dt*(funct2[xi+1][0]-funct2[xi-1][0])/(2*dx);
+    funct[xi][1]=funct[xi][0]+factor*dt*secondOrderSpatial(funct2, xi, dx);
 };
 @
 ```
@@ -184,7 +173,7 @@ void forwardEulerMethod(double funct[][2], double funct2[][2], double dt, int xi
 
 ```cpp
 {{second order spatial derivative}}=
-double secondOrderSpatial(int xSteps, double funct2[][2], int xi, double dx){
+double secondOrderSpatial(double funct2[][2], int xi, double dx){
     return (funct2[xi+1][0]-funct2[xi-1][0])/(2*dx);
 };
 @
@@ -195,8 +184,7 @@ double secondOrderSpatial(int xSteps, double funct2[][2], int xi, double dx){
 ```cpp
 {{output}}=
 void output(int ti, int xi, double t, double x[], double phi[][2]){
-    // t x phi
-    //cout << t << ' ' << x[xi] << ' ' <<  phi[xi][ti] << endl;
+    // x phi
     cout << x[xi] << ' ' <<  phi[xi][ti] << endl;
 };
 @
@@ -206,7 +194,6 @@ void output(int ti, int xi, double t, double x[], double phi[][2]){
 ```cpp
 {{gnuplot}}=
 void gnuplot(){
-    //cout << "set term qt" << endl;
     cout << "plot '-' w l" << endl;
 };
 @
@@ -227,12 +214,9 @@ void updateFunc(int xSteps, double phi[][2], double eta[][2], double chi[][2]){
 ```cpp
 {{init}}=
 void init(double t, double x[], double phi[][2], double eta[][2], double chi[][2], int xSteps, double dx, double L){
-    //t=0;
-    //x[0]=0;
     cout << "reset" << endl;
     cout << "set xrange [0:1]" << endl;
     cout << "set yrange [-10:10]" << endl;
-//    cout << "set yrange [-2:2]" << endl;
     gnuplot();
     for (int i = 2; i < xSteps-2; i=i+1) {
         phi[i][0] = exp(pow(sin(M_PI/L*((i-2)*dx)),2))-1;
@@ -241,22 +225,17 @@ void init(double t, double x[], double phi[][2], double eta[][2], double chi[][2
         //chi[i][0] = (i-2)*dx;
         //chi[i][0] = sin(M_PI/L*((i-2)*dx));
         //chi[i][0] = 1;
-        //
-        //eta[i][0] = chi[i][0];
+        eta[i][0] = chi[i][0];
         //eta[i][0] = 0;
-        eta[i][0] = pow(sin(M_PI/L*((i-2)*dx)),2);
+        //eta[i][0] = pow(sin(M_PI/L*((i-2)*dx)),2);
         //eta[i][0] = exp(pow(sin(M_PI/L*((i-2)*dx)),2))*2*sin(M_PI/L*((i-2)*dx))*cos(M_PI/L*((i-2)*dx))*M_PI/L;
         //eta[i][0] = 1;
         x[i]=(i-2)*dx;
         output(0, i, t, x, phi);
 	}
 	x[xSteps-2]=(xSteps-4)*dx;
-    //cout << t << endl;
     boundaryCondition(0, xSteps, phi, eta, chi);
-    //t=0;
-    //cout << t << endl;
     output(0, (xSteps-2), t, x, phi);
-    //cout << " " << endl;
 };
 @
 ```
