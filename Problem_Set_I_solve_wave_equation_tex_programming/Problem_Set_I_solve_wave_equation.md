@@ -49,6 +49,8 @@ https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods
 1.2: Forward Euler method - Mathematics LibreTexts
 https://math.libretexts.org/Bookshelves/Differential_Equations/Numerically_Solving_Ordinary_Differential_Equations_(Brorson)/01%3A_Chapters/1.02%3A_Forward_Euler_method
 
+Running Gnuplot as a live graph, with automatic updates | Horatio Caine's Blog
+http://hxcaine.com/blog/2013/02/28/running-gnuplot-as-a-live-graph-with-automatic-updates/
 
 ## Programming
 
@@ -65,12 +67,12 @@ noweb.py -RProblem_Set_I_solve_wave_equation.cpp Problem_Set_I_solve_wave_equati
 # live gnuplot plot
 #./Problem_Set_I_solve_wave_equation 0.01 | gnuplot -p -e "plot '-' using 2:3"
 ./Problem_Set_I_solve_wave_equation 0.01 40000 | gnuplot -p
+#./Problem_Set_I_solve_wave_equation 0.01 2
 
 
-#data plot
-#./Problem_Set_I_solve_wave_equation 0.01 > 2023-11-26-data.dat
+#data output and plot
+#./Problem_Set_I_solve_wave_equation 0.01 4000 > 2023-11-26-data.dat
 #cat 2023-11-26-data.dat | gnuplot -p
-
 
 
 # create pdf latex file
@@ -148,9 +150,9 @@ void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], doub
         t=j*dt;
         gnuplot();
         for (int i = 2; i < xSteps-2; i=i+1) {
-            forwardEulerMethod(phi, eta, dt, i, dx, 1);
-            forwardEulerMethod(eta, chi, dt, i, dx, pow(CSpeed, 2));
-            forwardEulerMethod(chi, eta, dt, i, dx, 1);
+            forwardEulerMethod(phi, eta, dt, i, dx, 1, 0);
+            forwardEulerMethod(eta, chi, dt, i, dx, pow(CSpeed, 2), 1);
+            forwardEulerMethod(chi, eta, dt, i, dx, 1, 1);
             output(1, i, t, x, phi);
         };
         boundaryCondition(1, xSteps, phi, eta, chi);
@@ -164,8 +166,12 @@ void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], doub
 
 ```cpp
 {{forwad Euler method}}=
-void forwardEulerMethod(double funct[][2], double funct2[][2], double dt, int xi, double dx, double factor){
-    funct[xi][1]=funct[xi][0]+factor*dt*secondOrderSpatial(funct2, xi, dx);
+void forwardEulerMethod(double funct[][2], double funct2[][2], double dt, int xi, double dx, double factor, int deriv){
+    if (deriv == 0) {
+        funct[xi][1]=funct[xi][0]+factor*dt*funct2[xi][0];
+    } else {
+        funct[xi][1]=funct[xi][0]+factor*dt*secondOrderSpatial(funct2, xi, dx);
+    }
 };
 @
 ```
@@ -225,11 +231,11 @@ void init(double t, double x[], double phi[][2], double eta[][2], double chi[][2
         //chi[i][0] = (i-2)*dx;
         //chi[i][0] = sin(M_PI/L*((i-2)*dx));
         //chi[i][0] = 1;
-        eta[i][0] = chi[i][0];
+        //eta[i][0] = chi[i][0];
         //eta[i][0] = 0;
+        eta[i][0] = 1;
         //eta[i][0] = pow(sin(M_PI/L*((i-2)*dx)),2);
         //eta[i][0] = exp(pow(sin(M_PI/L*((i-2)*dx)),2))*2*sin(M_PI/L*((i-2)*dx))*cos(M_PI/L*((i-2)*dx))*M_PI/L;
-        //eta[i][0] = 1;
         x[i]=(i-2)*dx;
         output(0, i, t, x, phi);
 	}
@@ -268,7 +274,7 @@ void output(int ti, int xi, double t, double x[], double phi[][2]);
 void init(double t, double x[], double phi[][2], double eta[][2], double chi[][2], int xSteps, double dx, double L);
 void boundaryCondition(int ti, int xSteps, double phi[][2], double eta[][2], double chi[][2]);
 double secondOrderSpatial(double funct2[][2], int xi, double dx);
-void forwardEulerMethod(double funct[][2], double funct2[][2], double dt, int xi, double dx, double factor);
+void forwardEulerMethod(double funct[][2], double funct2[][2], double dt, int xi, double dx, double factor, int deriv);
 void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], double t, double dt, double x[], double dx, double CSpeed, int xSteps, int tSteps);
 void updateFunc(int xSteps, double phi[][2], double eta[][2], double chi[][2]);
 void gnuplot();

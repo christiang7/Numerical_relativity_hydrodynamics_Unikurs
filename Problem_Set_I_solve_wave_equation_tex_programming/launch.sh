@@ -5,12 +5,12 @@ noweb.py -RProblem_Set_I_solve_wave_equation.cpp Problem_Set_I_solve_wave_equati
 # live gnuplot plot
 #./Problem_Set_I_solve_wave_equation 0.01 | gnuplot -p -e "plot '-' using 2:3"
 ./Problem_Set_I_solve_wave_equation 0.01 40000 | gnuplot -p
+#./Problem_Set_I_solve_wave_equation 0.01 2
 
 
-#data plot
-#./Problem_Set_I_solve_wave_equation 0.01 > 2023-11-26-data.dat
+#data output and plot
+#./Problem_Set_I_solve_wave_equation 0.01 4000 > 2023-11-26-data.dat
 #cat 2023-11-26-data.dat | gnuplot -p
-
 
 
 # create pdf latex file
