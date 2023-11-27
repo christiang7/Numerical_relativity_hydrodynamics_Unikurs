@@ -52,6 +52,9 @@ https://math.libretexts.org/Bookshelves/Differential_Equations/Numerically_Solvi
 Running Gnuplot as a live graph, with automatic updates | Horatio Caine's Blog
 http://hxcaine.com/blog/2013/02/28/running-gnuplot-as-a-live-graph-with-automatic-updates/
 
+Fourth order finite difference | AnonymousOverflow
+https://overflow.hostux.net/exchange/math/questions/3964484/fourth-order-finite-difference
+
 ## Programming
 
 ```bash
@@ -107,6 +110,10 @@ using namespace std ;
 
 {{gnuplot}}
 
+{{runge kutta solver}}
+
+{{wave DGL}}
+
 int main(int argc, char** argv)
 {
     const double CSpeed = 1;
@@ -140,6 +147,38 @@ int main(int argc, char** argv)
     //{{Runge Kutter solver}}
 	return 0;
 };
+@
+```
+
+```cpp
+{{runge kutta solver}}=
+void rungekuttaSolver(double y[],int n,double x,double h, void (derivs)(double, double[], double[])){
+    int j,i;
+    double h2,h6,xh, xhh,y1[n],k1[n],k2[n],k3[n];
+    h2=h*0.5;    h6=h/6.;
+    //Simpsonregel
+    xh=x+h2;	xhh=x+h;
+    (derivs)(x,y,k1);
+    for(i=0;i<n;i++) y1[i]=y[i]+h2*k1[i];
+    (derivs)(xh,y1,k2);
+    for(i=0;i<n;i++) y1[i]=y[i]-h*k1[i]+2*h*k2[i];
+    (derivs)(xhh,y1,k3);
+    x+=h;
+    for(i=0;i<n;i++) y[i]+=h6*(k1[i]+4.*k2[i]+k3[i]);
+}
+@
+```
+
+
+```cpp
+{{wave DGL}}=
+void waveDGL(double dt, double y[], double dydt[], double dx){
+    //dydt[0] =y[1];
+    //dydt[1] =pow(CSpeed, 2)*(-y[2][i+2]+8*y[2][i+1]-8*y[2][i-1]+y[2][i-2])/(12*dx) ;
+    //dydt[2] =(-y[1][i+2]+8*y[1][i+1]-8*y[1][i-1]+y[1][i-2])/(12*dx) ;
+}
+
+
 @
 ```
 
@@ -242,6 +281,7 @@ void init(double t, double x[], double phi[][2], double eta[][2], double chi[][2
 	x[xSteps-2]=(xSteps-4)*dx;
     boundaryCondition(0, xSteps, phi, eta, chi);
     output(0, (xSteps-2), t, x, phi);
+
 };
 @
 ```
@@ -278,6 +318,8 @@ void forwardEulerMethod(double funct[][2], double funct2[][2], double dt, int xi
 void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], double t, double dt, double x[], double dx, double CSpeed, int xSteps, int tSteps);
 void updateFunc(int xSteps, double phi[][2], double eta[][2], double chi[][2]);
 void gnuplot();
+void rungekuttaSolver(double y[],int n,double x,double h, void (derivs)(double, double[], double[]));
+void waveDGL(double dt, double y[], double dydt[], double dx);
 @
 ```
 

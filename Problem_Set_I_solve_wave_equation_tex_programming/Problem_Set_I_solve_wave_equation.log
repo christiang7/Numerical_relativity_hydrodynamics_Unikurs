@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.12)  27 NOV 2023 01:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.12)  27 NOV 2023 15:57
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1067,12 +1067,12 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 (./_minted-Problem_Set_I_solve_wave_equation/manni.pygstyle)
 runsystem(pygmentize -l 'cpp' -f latex -P commandprefix=PYG -F tokenmerge -P st
-ripnl='False' -o _minted-Problem_Set_I_solve_wave_equation/88F99E09F913244BDB6D
-3AD9099CAFE128F1DA29D17583479DEF3FF682E9EEEC.pygtex Problem_Set_I_solve_wave_eq
+ripnl='False' -o _minted-Problem_Set_I_solve_wave_equation/9B76C3E37C40CE6ED941
+A0D33110AC8328F1DA29D17583479DEF3FF682E9EEEC.pygtex Problem_Set_I_solve_wave_eq
 uation.pyg)...executed.
 
 
-(./_minted-Problem_Set_I_solve_wave_equation/88F99E09F913244BDB6D3AD9099CAFE128
+(./_minted-Problem_Set_I_solve_wave_equation/9B76C3E37C40CE6ED941A0D33110AC8328
 F1DA29D17583479DEF3FF682E9EEEC.pygtex
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 .
@@ -1082,17 +1082,17 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 6.
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-19.
+21.
 (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (87.99045pt too wide) in paragraph at lines 30--30
+Overfull \hbox (87.99045pt too wide) in paragraph at lines 32--32
 \T1/lmtt/m/it/10 exp(pow(sin(M_PI/L*((i[]2)*dx)),2))*2*sin(M_PI/L*((i[]2)*dx))*
 cos(M_PI/L*((i[]2)*dx))*M_PI/L;[]|  
  []
 
 
-Overfull \hbox (87.99045pt too wide) in paragraph at lines 38--38
+Overfull \hbox (87.99045pt too wide) in paragraph at lines 40--40
 \T1/lmtt/m/it/10 exp(pow(sin(M_PI/L*((i[]2)*dx)),2))*2*sin(M_PI/L*((i[]2)*dx))*
 cos(M_PI/L*((i[]2)*dx))*M_PI/L;[]|  
  []
@@ -1103,18 +1103,26 @@ cos(M_PI/L*((i[]2)*dx))*M_PI/L;[]|
 dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-m
 athsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
-Underfull \vbox (badness 10000) detected at line 179
+Underfull \vbox (badness 10000) detected at line 205
  []
 
 
-Underfull \vbox (badness 10000) detected at line 179
+Underfull \vbox (badness 10000) detected at line 205
  []
 
 [2]
-runsystem(rm _minted-Problem_Set_I_solve_wave_equation/55CA73D043A93735D6D3FD68
-257EF6C828F1DA29D17583479DEF3FF682E9EEEC.pygtex)...executed.
+Underfull \vbox (badness 10000) detected at line 205
+ []
 
- [3] (./Problem_Set_I_solve_wave_equation.aux)
+
+Underfull \vbox (badness 10000) detected at line 205
+ []
+
+[3]
+runsystem(rm _minted-Problem_Set_I_solve_wave_equation/88F99E09F913244BDB6D3AD9
+099CAFE128F1DA29D17583479DEF3FF682E9EEEC.pygtex)...executed.
+
+ [4] (./Problem_Set_I_solve_wave_equation.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
@@ -1126,9 +1134,9 @@ runsystem(rm Problem_Set_I_solve_wave_equation.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 29497 strings out of 477569
- 542054 string characters out of 5827656
- 1906759 words of memory out of 5000000
+ 29498 strings out of 477569
+ 542060 string characters out of 5827656
+ 1911759 words of memory out of 5000000
  49458 multiletter control sequences out of 15000+600000
  556117 words of font info for 71 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -1142,11 +1150,11 @@ mr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmtti10.pfb>
-Output written on Problem_Set_I_solve_wave_equation.pdf (3 pages, 220777 bytes)
+Output written on Problem_Set_I_solve_wave_equation.pdf (4 pages, 223468 bytes)
 .
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
+ 132 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
  45 words of extra memory for PDF output out of 10000 (max. 10000000)
 
