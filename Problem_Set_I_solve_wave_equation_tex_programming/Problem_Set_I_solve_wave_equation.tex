@@ -68,14 +68,14 @@ void init(double t, double x[], double phi[][2], double eta[][2], double chi[][2
     gnuplot();
     for (int i = 2; i < xSteps-2; i=i+1) {
         phi[i][0] = exp(pow(sin(M_PI/L*((i-2)*dx)),2))-1;
-        chi[i][0] = phi[i][0];
-        //chi[i][0] = exp(pow(sin(M_PI/L*((i-2)*dx)),2))*2*sin(M_PI/L*((i-2)*dx))*cos(M_PI/L*((i-2)*dx))*M_PI/L;
+        //chi[i][0] = phi[i][0];
+        chi[i][0] = exp(pow(sin(M_PI/L*((i-2)*dx)),2))*2*sin(M_PI/L*((i-2)*dx))*cos(M_PI/L*((i-2)*dx))*M_PI/L;
         //chi[i][0] = (i-2)*dx;
         //chi[i][0] = sin(M_PI/L*((i-2)*dx));
         //chi[i][0] = 1;
-        //eta[i][0] = chi[i][0];
+        eta[i][0] = -chi[i][0];
         //eta[i][0] = 0;
-        eta[i][0] = 1;
+        //eta[i][0] = 1;
         //eta[i][0] = pow(sin(M_PI/L*((i-2)*dx)),2);
         //eta[i][0] = exp(pow(sin(M_PI/L*((i-2)*dx)),2))*2*sin(M_PI/L*((i-2)*dx))*cos(M_PI/L*((i-2)*dx))*M_PI/L;
         x[i]=(i-2)*dx;
@@ -88,21 +88,21 @@ void init(double t, double x[], double phi[][2], double eta[][2], double chi[][2
 };
 
 void boundaryCondition(int ti, int xSteps, double phi[][2], double eta[][2], double chi[][2]){
-    phi[0][ti] = phi[xSteps-4][ti];
-    eta[0][ti] = eta[xSteps-4][ti];
-    chi[0][ti] = chi[xSteps-4][ti];
-    phi[1][ti] = phi[xSteps-3][ti];
-    eta[1][ti] = eta[xSteps-3][ti];
-    chi[1][ti] = chi[xSteps-3][ti];
-    phi[xSteps-2][ti] = phi[2][ti];
-    eta[xSteps-2][ti] = eta[2][ti];
-    chi[xSteps-2][ti] = chi[2][ti];
-    phi[xSteps-1][ti] = phi[3][ti];
-    eta[xSteps-1][ti] = eta[3][ti];
-    chi[xSteps-1][ti] = chi[3][ti];
-    phi[xSteps][ti] = phi[4][ti];
-    eta[xSteps][ti] = eta[4][ti];
-    chi[xSteps][ti] = chi[4][ti];
+    phi[0][ti] = phi[xSteps-5][ti];
+    eta[0][ti] = eta[xSteps-5][ti];
+    chi[0][ti] = chi[xSteps-5][ti];
+    phi[1][ti] = phi[xSteps-4][ti];
+    eta[1][ti] = eta[xSteps-4][ti];
+    chi[1][ti] = chi[xSteps-4][ti];
+    phi[xSteps-3][ti] = phi[2][ti];
+    eta[xSteps-3][ti] = eta[2][ti];
+    chi[xSteps-3][ti] = chi[2][ti];
+    phi[xSteps-2][ti] = phi[3][ti];
+    eta[xSteps-2][ti] = eta[3][ti];
+    chi[xSteps-2][ti] = chi[3][ti];
+    phi[xSteps-1][ti] = phi[4][ti];
+    eta[xSteps-1][ti] = eta[4][ti];
+    chi[xSteps-1][ti] = chi[4][ti];
 };
 
 double secondOrderSpatial(double funct2[][2], int xi, double dx){
@@ -118,7 +118,7 @@ void forwardEulerMethod(double funct[][2], double funct2[][2], double dt, int xi
 };
 
 void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], double t, double dt, double x[], double dx, double CSpeed, int xSteps, int tSteps){
-    for (int j = 1; j < tSteps; j=j+1) {
+    for (int j = 1; j <= tSteps; j=j+1) {
         t=j*dt;
         gnuplot();
         for (int i = 2; i < xSteps-2; i=i+1) {
@@ -129,7 +129,7 @@ void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], doub
         };
         boundaryCondition(1, xSteps, phi, eta, chi);
         output(1, (xSteps-2), t, x, phi);
-        cout << "elpased time" << endl;
+        cout << "elapsed time" << endl;
         updateFunc(xSteps, phi, eta, chi);
     };
 };
@@ -167,8 +167,6 @@ void waveDGL(double dt, double y[], double dydt[], double dx){
     //dydt[2] =(-y[1][i+2]+8*y[1][i+1]-8*y[1][i-1]+y[1][i-2])/(12*dx) ;
 }
 
-
-
 int main(int argc, char** argv)
 {
     const double CSpeed = 1;
@@ -190,7 +188,7 @@ int main(int argc, char** argv)
     eta[xSteps][2]
     ;
 
-    cout << "# parameters " << dx << ' ' << dt << ' ' <<  xSteps << endl;
+    cout << "# parameters dx=" << dx << " dt=" << dt << " xSteps=" <<  xSteps << endl;
 
     init(t, x, phi, eta, chi, xSteps, dx, L);
 
