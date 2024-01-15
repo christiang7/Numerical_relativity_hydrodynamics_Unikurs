@@ -6,7 +6,67 @@
 
 
 \begin{minted}[linenos=true,bgcolor=lightgraycolor,numberblanklines=true,showspaces=false,breaklines=true]{cpp}
+#include <cstdio>
+#include <cmath>
+#include <fstream>
+#include <iostream>
+using namespace std ;
 
+double
+D,
+Sx,
+tau,
+h
+;
 
+void calc_init(double rho, double p, double vx, double W);
+void root_solver(double rho, double p, double vx, double W);
+
+void calc_init(double rho, double p, double vx, double W){
+    h = 1.+(5./2.)*(p/rho);
+    D = rho*W;
+    Sx = rho*h*W*W*vx;
+    tau = rho*h*W*W-p-D;
+    cout << "# parameters D=" << D << " Sx=" << Sx << " tau=" <<  tau << " h=" <<  h << endl;
+}
+;
+
+void root_solver(double rho, double p, double vx, double W){
+    double func, f_p, p_delta, p_old, p_new;
+    p_delta = 0.1;
+    //cout << "# parameters D=" << D << " Sx=" << Sx << " tau=" <<  tau << " h=" <<  h << endl;
+    while (abs(p_delta) > 0.000001)
+    {
+        p_old=p;
+        vx = Sx / (tau + D + p);
+        W = 1./sqrt(1. - vx*vx);
+        cout << "# parameters rho=" << rho << " p=" << p << " vx=" <<  vx << " W=" <<  W << endl;
+        func = p - 2./3./(W*W)*(tau + D + p - D*W - p*W*W);
+        f_p = 1.- 2./3.*Sx*Sx/(pow(tau + D + p,3.))*(tau + D + p - D*W);
+        p_new = p - func/f_p;
+        p_delta=p_new - p_old;
+        cout << "# p_delta=" << p_delta << " func=" << func << " f_p=" << f_p << " p=" << p_new << endl;
+        p = p_new;
+    }
+    cout << "# new pressure p=" << p << endl;
+};
+
+int main(int argc, char** argv)
+{
+
+    double //
+    rho = stod(argv[1]),
+    p = stod(argv[2]),
+    vx = stod(argv[3]),
+    W = 1./sqrt(1.-vx*vx)
+    ;
+
+    cout << "# parameters rho=" << rho << " p=" << p << " vx=" <<  vx << " W=" <<  W << endl;
+
+    calc_init(rho, p, vx, W);
+
+    root_solver(rho, p, vx, W);
+	return 0;
+};
 \end{minted}
 \end{document}

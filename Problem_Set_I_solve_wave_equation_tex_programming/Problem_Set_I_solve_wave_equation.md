@@ -65,9 +65,10 @@ noweb.py -Rlaunch.sh Problem_Set_I_solve_wave_equation.md > launch.sh && ./launc
 ```bash
 {{launch.sh}}=
 #!/bin/bash
-# compilation and execution of program
+# compilation of program
 noweb.py -RProblem_Set_I_solve_wave_equation.cpp Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.cpp && g++ -o Problem_Set_I_solve_wave_equation Problem_Set_I_solve_wave_equation.cpp
 
+# execution of program
 # live gnuplot plot
 #./Problem_Set_I_solve_wave_equation 0.01 | gnuplot -p -e "plot '-' using 2:3"
 ./Problem_Set_I_solve_wave_equation 0.01 40000 | gnuplot -p

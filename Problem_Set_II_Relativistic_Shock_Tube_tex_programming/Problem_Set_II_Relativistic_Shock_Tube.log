@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.12)  8 JAN 2024 13:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2023.10.12)  11 JAN 2024 15:49
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**Problem_Set_I_solve_wave_equation.tex
-(./Problem_Set_I_solve_wave_equation.tex
+**Problem_Set_II_Relativistic_Shock_Tube.tex
+(./Problem_Set_II_Relativistic_Shock_Tube.tex
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -868,11 +868,11 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
-runsystem(uname -s > "Problem_Set_I_solve_wave_equation.w18")...executed.
+runsystem(uname -s > "Problem_Set_II_Relativistic_Shock_Tube.w18")...executed.
 
 
-(./Problem_Set_I_solve_wave_equation.w18)
-runsystem(rm -- "Problem_Set_I_solve_wave_equation.w18")...executed.
+(./Problem_Set_II_Relativistic_Shock_Tube.w18)
+runsystem(rm -- "Problem_Set_II_Relativistic_Shock_Tube.w18")...executed.
 
 )
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
@@ -906,16 +906,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks43
 \c@listing=\count357
 )
-runsystem(mkdir -p _minted-Problem_Set_I_solve_wave_equation)...executed.
+runsystem(mkdir -p _minted-Problem_Set_II_Relativistic_Shock_Tube)...executed.
 
 )
 (./color-symbols.tex)
-runsystem(which pygmentize && touch Problem_Set_I_solve_wave_equation.aex)...ex
-ecuted.
+runsystem(which pygmentize && touch Problem_Set_II_Relativistic_Shock_Tube.aex)
+...executed.
 
-runsystem(rm Problem_Set_I_solve_wave_equation.aex)...executed.
+runsystem(rm Problem_Set_II_Relativistic_Shock_Tube.aex)...executed.
 
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 5.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 4.
 
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -925,27 +925,27 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count358
 \l__pdf_internal_box=\box76
 )
-(./Problem_Set_I_solve_wave_equation.aux)
-\openout1 = `Problem_Set_I_solve_wave_equation.aux'.
+(./Problem_Set_II_Relativistic_Shock_Tube.aux)
+\openout1 = `Problem_Set_II_Relativistic_Shock_Tube.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -974,12 +974,12 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 5.
+Package hyperref Info: Link coloring OFF on input line 4.
 
-(./Problem_Set_I_solve_wave_equation.out)
-(./Problem_Set_I_solve_wave_equation.out)
+(./Problem_Set_II_Relativistic_Shock_Tube.out)
+(./Problem_Set_II_Relativistic_Shock_Tube.out)
 \@outlinefile=\write7
-\openout7 = `Problem_Set_I_solve_wave_equation.out'.
+\openout7 = `Problem_Set_II_Relativistic_Shock_Tube.out'.
 
 
 *geometry* driver: auto-detecting
@@ -1017,145 +1017,104 @@ Package hyperref Info: Link coloring OFF on input line 5.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count365
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
+\openout5 = `Problem_Set_II_Relativistic_Shock_Tube.pyg'.
+
+(./_minted-Problem_Set_II_Relativistic_Shock_Tube/manni.pygstyle)
+(./_minted-Problem_Set_II_Relativistic_Shock_Tube/0A48955EB624054B706AF89811112
+9CE01FAA4A7FAAE8A2BDA9C5F09E2C90552.pygtex
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 .
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 6.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
+3.
+
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
-.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
+3.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-8.
+23.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-8.
+23.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 8.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 8.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 8.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
+(Font)              <5> on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 8.
-
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 23
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-\openout5 = `Problem_Set_I_solve_wave_equation.pyg'.
-
-
-(./_minted-Problem_Set_I_solve_wave_equation/manni.pygstyle)
-runsystem(pygmentize -l 'cpp' -f latex -P commandprefix=PYG -F tokenmerge -P st
-ripnl='False' -o _minted-Problem_Set_I_solve_wave_equation/248D14DCE50F9CB5AAF6
-500D32EC3BD528F1DA29D17583479DEF3FF682E9EEEC.pygtex Problem_Set_I_solve_wave_eq
-uation.pyg)...executed.
-
-
-(./_minted-Problem_Set_I_solve_wave_equation/248D14DCE50F9CB5AAF6500D32EC3BD528
-F1DA29D17583479DEF3FF682E9EEEC.pygtex
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 6.
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-21.
-(/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Overfull \hbox (86.25433pt too wide) in paragraph at lines 32--32
-[]\T1/lmtt/m/n/10 exp(pow(sin(M_PI[]/[]L[]*[]((i[][]2[])[]*[]dx)),[]2[]))[]*[][
-]2[][]*[]sin(M_PI[]/[]L[]*[]((i[][]2[])[]*[]dx))[]*[]cos(M_PI[]/[]L[]*[]((i[][]
-2[])[]*[]dx))[]*[]M_PI[]/[]L;|  
+))
+Underfull \vbox (badness 10000) detected at line 71
  []
 
 
-Overfull \hbox (87.99045pt too wide) in paragraph at lines 40--40
-\T1/lmtt/m/it/10 exp(pow(sin(M_PI/L*((i[]2)*dx)),2))*2*sin(M_PI/L*((i[]2)*dx))*
-cos(M_PI/L*((i[]2)*dx))*M_PI/L;[]|  
+Overfull \vbox (10.76416pt too high) detected at line 71
  []
 
-) [1
+[1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/sha
-re/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-m
-athsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
-Underfull \vbox (badness 10000) detected at line 211
- []
-
-
-Underfull \vbox (badness 10000) detected at line 211
- []
-
-[2]
-Underfull \vbox (badness 10000) detected at line 211
- []
-
-
-Underfull \vbox (badness 10000) detected at line 211
- []
-
-[3]
-runsystem(rm _minted-Problem_Set_I_solve_wave_equation/54033E4F9A4808ABDE9D7FD8
-F96B483828F1DA29D17583479DEF3FF682E9EEEC.pygtex)...executed.
-
- [4] (./Problem_Set_I_solve_wave_equation.aux)
+re/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}] [2]
+(./Problem_Set_II_Relativistic_Shock_Tube.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
-Package rerunfilecheck Info: File `Problem_Set_I_solve_wave_equation.out' has n
-ot changed.
-(rerunfilecheck)             Checksum: 6E032C003976DF67E811D2637351C096;667.
-runsystem(rm Problem_Set_I_solve_wave_equation.pyg)...executed.
+Package rerunfilecheck Info: File `Problem_Set_II_Relativistic_Shock_Tube.out' 
+has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+runsystem(rm Problem_Set_II_Relativistic_Shock_Tube.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 29498 strings out of 477569
- 542060 string characters out of 5827656
- 1913759 words of memory out of 5000000
- 49458 multiletter control sequences out of 15000+600000
- 556117 words of font info for 71 fonts, out of 8000000 for 9000
+ 29383 strings out of 477569
+ 540493 string characters out of 5827656
+ 1886759 words of memory out of 5000000
+ 49379 multiletter control sequences out of 15000+600000
+ 526068 words of font info for 49 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 89i,11n,90p,875b,708s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmtti10.pfb>
-Output written on Problem_Set_I_solve_wave_equation.pdf (4 pages, 223561 bytes)
-.
+ 89i,10n,90p,877b,760s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fonts/type1/public
+/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmtti10.pfb>
+Output written on Problem_Set_II_Relativistic_Shock_Tube.pdf (2 pages, 120719 b
+ytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

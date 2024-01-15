@@ -105,22 +105,30 @@ void gnuplot(){
     cout << "plot '-' w l" << endl;
 };
 
-void rungekuttaSolver(double y[],int n,double x,double h, void (derivs)(double, double[], double[])){
+void rungekuttaSolver(double y[],int n, double t, double dt, double dx, void (derivs)(double, double[], double[])){
     int j,i;
-    double h2,h6,xh, xhh,y1[n],k1[n],k2[n],k3[n];
-    h2=h*0.5;    h6=h/6.;
+    double dt2,dt6,tdt, tdtdt,y1[n],k1[n],k2[n],k3[n];
+    dt2 = dt * 0.5;
+    dt6 = dt / 6.;
     //Simpsonregel
-    xh=x+h2;	xhh=x+h;
-    (derivs)(x,y,k1);
-    for(i=0;i<n;i++) y1[i]=y[i]+h2*k1[i];
-    (derivs)(xh,y1,k2);
-    for(i=0;i<n;i++) y1[i]=y[i]-h*k1[i]+2*h*k2[i];
-    (derivs)(xhh,y1,k3);
+    tdt2=t+dt*0.5;
+    tdt=t+dt;
+    derivs(t, y, k1);
+    for(i=0;i<n;i++){
+        y1[i]=y[i]+dt*0.5*k1[i];
+    }
+    derivs(tdt2, y1, k2);
+    for(i=0;i<n;i++){
+        y1[i]=y[i]-dt*k1[i]+2*dt*k2[i];
+    }
+    derivs(tdt, y1, k3);
     x+=h;
-    for(i=0;i<n;i++) y[i]+=h6*(k1[i]+4.*k2[i]+k3[i]);
+    for(i=0;i<n;i++){
+        y[i]+=dt6*(k1[i]+4.*k2[i]+k3[i]);
+    }
 }
 
-void waveDGL(double dt, double y[], double dydt[], double dx){
+void waveDGL(double t, double y[], double dydt[], double dx){
     //dydt[0] =y[1];
     //dydt[1] =pow(CSpeed, 2)*(-y[2][i+2]+8*y[2][i+1]-8*y[2][i-1]+y[2][i-2])/(12*dx) ;
     //dydt[2] =(-y[1][i+2]+8*y[1][i+1]-8*y[1][i-1]+y[1][i-2])/(12*dx) ;
