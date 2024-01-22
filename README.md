@@ -47,19 +47,19 @@ BLOCK I -- Numerical Methods
 
 BLOCK II  -- General-Relativistic Hydrodynamics
 
-    23.11 LECTURE -- Overview: Numerical Relativity without matter
-    30.11 LECTURE -- Relativistic Hydrodynamics
-    7.12   LECTURE --  General Relativistic Hydrodynamics
-    14.12 LECTURE -- Constructing Initial data
-    21.12 SEMINAR -- Work on Problem Set II: Evolving Burger's Equation
-    11.01 SEMINAR -- Work on Problem Set II
+	23.11 LECTURE -- Overview: Numerical Relativity without matter
+	30.11 LECTURE -- Relativistic Hydrodynamics
+	7.12   LECTURE --  General Relativistic Hydrodynamics
+	14.12 LECTURE -- Constructing Initial data
+	21.12 SEMINAR -- Work on Problem Set II: Relativistic Shocktube
+	11.01 SEMINAR -- Work on Problem Set II
 
 BLOCK III  -- Advanced Topics: Simulating Neutrino Radiation and Magnetic Fields
 
-    18.01. LECTURE -- General-Relativistic Radiation Hydrodynamics
-    25.01. LECTURE -- General-Relativistic Magnetohydrodynamics
-    01.02. SEMINAR -- Work on Problem Set III: Relativistic Shocktube
-    08.02. SEMINAR -- Work on Problem Set III
+	18.01. LECTURE -- General-Relativistic Radiation Hydrodynamics
+	25.01. LECTURE -- General-Relativistic Magnetohydrodynamics
+	01.02. SEMINAR -- Work on Problem Set II: Relativistic Shocktube
+	08.02. SEMINAR -- Work on Problem Set II
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>.
