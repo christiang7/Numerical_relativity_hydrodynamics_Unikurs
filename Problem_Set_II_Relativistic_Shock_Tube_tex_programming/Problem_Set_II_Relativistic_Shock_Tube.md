@@ -12,13 +12,8 @@ Created [2023-12-14]()
 
 ## Programming
 
+*run-cell.sh*
 ```bash
-noweb.py -Rlaunch.sh Problem_Set_II_Relativistic_Shock_Tube.md > launch.sh && chmod +x launch.sh && ./launch.sh
-```
-
-
-```bash
-{{launch.sh}}=
 #!/bin/bash
 # compilation of program
 noweb.py -RProblem_Set_II_Relativistic_Shock_Tube.cpp Problem_Set_II_Relativistic_Shock_Tube.md > Problem_Set_II_Relativistic_Shock_Tube.cpp && g++ -o Problem_Set_II_Relativistic_Shock_Tube Problem_Set_II_Relativistic_Shock_Tube.cpp
@@ -47,11 +42,13 @@ noweb.py -RProblem_Set_II_Relativistic_Shock_Tube.cpp Problem_Set_II_Relativisti
 
 
 # create pdf latex file
-noweb.py -RProblem_Set_II_Relativistic_Shock_Tube.tex Problem_Set_II_Relativistic_Shock_Tube.md > Problem_Set_II_Relativistic_Shock_Tube.tex && pdflatex -shell-escape Problem_Set_II_Relativistic_Shock_Tube.tex > /dev/null
-@
+
+#*produce latex and pdf file}}
+
 ```
+
+*Problem_Set_II_Relativistic_Shock_Tube.cpp*
 ```cpp
-{{Problem_Set_II_Relativistic_Shock_Tube.cpp}}=
 #include <cstdio>
 #include <cmath>
 #include <fstream>
@@ -65,11 +62,11 @@ tau,
 h
 ;
 
-{{function declaration}}
+#*function declaration}}
 
-{{calc init}}
+#*calc init}}
 
-{{root solver}}
+#*root solver}}
 
 int main(int argc, char** argv)
 {
@@ -88,11 +85,10 @@ int main(int argc, char** argv)
     root_solver(rho, p, vx, W);
 	return 0;
 };
-@
 ```
 
+*calc init*
 ```cpp
-{{calc init}}=
 void calc_init(double rho, double p, double vx, double W){
     h = 1.+(5./2.)*(p/rho);
     D = rho*W;
@@ -101,11 +97,10 @@ void calc_init(double rho, double p, double vx, double W){
     cout << "# parameters D=" << D << " Sx=" << Sx << " tau=" <<  tau << " h=" <<  h << endl;
 }
 ;
-@
 ```
 
+*root solver*
 ```cpp
-{{root solver}}=
 void root_solver(double rho, double p, double vx, double W){
     double func, f_p, p_delta, p_old, p_new;
     p_delta = 0.1;
@@ -125,29 +120,28 @@ void root_solver(double rho, double p, double vx, double W){
     }
     cout << "# new pressure p=" << p << endl;
 };
-@
 ```
 
 
+*function declaration*
 ```cpp
-{{function declaration}}=
 void calc_init(double rho, double p, double vx, double W);
 void root_solver(double rho, double p, double vx, double W);
-@
 ```
 
 
 
 ## Latex File
 
-
+*produce latex and pdf file*
 ```bash
-noweb.py -RProblem_Set_II_Relativistic_Shock_Tube.tex Problem_Set_II_Relativistic_Shock_Tube.md > Problem_Set_II_Relativistic_Shock_Tube.tex && pdflatex -shell-escape Problem_Set_II_Relativistic_Shock_Tube.tex && xdg-open Problem_Set_II_Relativistic_Shock_Tube.pdf 2>/dev/null & 
+noweb.py -RProblem_Set_II_Relativistic_Shock_Tube.tex Problem_Set_II_Relativistic_Shock_Tube.md > Problem_Set_II_Relativistic_Shock_Tube.tex && pdflatex -shell-escape Problem_Set_II_Relativistic_Shock_Tube.tex 2> /dev/null
+#noweb.py -RProblem_Set_II_Relativistic_Shock_Tube.tex Problem_Set_II_Relativistic_Shock_Tube.md > Problem_Set_II_Relativistic_Shock_Tube.tex && pdflatex -shell-escape Problem_Set_II_Relativistic_Shock_Tube.tex && xdg-open Problem_Set_II_Relativistic_Shock_Tube.pdf 2>/dev/null &
 ```
 
 
+*Problem_Set_II_Relativistic_Shock_Tube.tex*
 ```tex
-{{Problem_Set_II_Relativistic_Shock_Tube.tex}}=
 \documentclass[10pt,fleqn,reqno,a4paper]{article}
 \input{general-preamble.tex}
 \input{color-symbols.tex}
@@ -156,8 +150,7 @@ noweb.py -RProblem_Set_II_Relativistic_Shock_Tube.tex Problem_Set_II_Relativisti
 
 
 \begin{minted}[linenos=true,bgcolor=lightgraycolor,numberblanklines=true,showspaces=false,breaklines=true]{cpp}
-{{Problem_Set_II_Relativistic_Shock_Tube.cpp}}
+#*Problem_Set_II_Relativistic_Shock_Tube.cpp}}
 \end{minted}
 \end{document}
-@
 ```

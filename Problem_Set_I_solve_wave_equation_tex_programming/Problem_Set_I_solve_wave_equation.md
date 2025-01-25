@@ -1,23 +1,23 @@
 # Problem Set I solve wave equation
 Created [2023-11-04]()
 
+
+## Features
+
+## Informations
+
+### Journal
 - [X] **Problem Set I solve wave equation**
+	- [X] Backlog
+        - [ ] A.1.
+            - [X] writing in first order equation the wave equation
+            - [ ] calculation of eigenvectors and eigenvalues of matrix A
 	- [X] Doing
         - [ ] A.2. Programming
             - [X] all fields have to get two dimensions not just one, because, the time step needs two points
             - [ ] implement the midpoints for x positions
             - [ ] look at the correct array length
             - [ ] Runge Kutter method
-	- [X] Backlog
-        - [ ] A.1.
-            - [X] writing in first order equation the wave equation
-            - [ ] calculation of eigenvectors and eigenvalues of matrix A
-
-## Features
-
-## Informations
-
-### Log
 
 #### 2023-11-26 working simulation
 gnuplot live plotting is working
@@ -58,63 +58,61 @@ https://overflow.hostux.net/exchange/math/questions/3964484/fourth-order-finite-
 
 ## Programming
 
+*run-cell.sh*
 ```bash
-noweb.py -Rlaunch.sh Problem_Set_I_solve_wave_equation.md > launch.sh && ./launch.sh
-```
-
-```bash
-{{launch.sh}}=
 #!/bin/bash
-# compilation of program
+
+## create pdf latex file
+
+#*latex and pdf generater}}
+
+## compilation of program
 noweb.py -RProblem_Set_I_solve_wave_equation.cpp Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.cpp && g++ -o Problem_Set_I_solve_wave_equation Problem_Set_I_solve_wave_equation.cpp
 
-# execution of program
+## execution of program
 # live gnuplot plot
 #./Problem_Set_I_solve_wave_equation 0.01 | gnuplot -p -e "plot '-' using 2:3"
+
 ./Problem_Set_I_solve_wave_equation 0.01 40000 | gnuplot -p
+
 #./Problem_Set_I_solve_wave_equation 0.01 2
 
 
 #data output and plot
 #./Problem_Set_I_solve_wave_equation 0.01 4000 > 2023-11-26-data.dat
 #cat 2023-11-26-data.dat | gnuplot -p
-
-
-# create pdf latex file
-noweb.py -RProblem_Set_I_solve_wave_equation.tex Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.tex && pdflatex -shell-escape Problem_Set_I_solve_wave_equation.tex > /dev/null
-@
 ```
 
 
+*Problem_Set_I_solve_wave_equation.cpp*
 ```cpp
-{{Problem_Set_I_solve_wave_equation.cpp}}=
 #include <cstdio>
 #include <cmath>
 #include <fstream>
 #include <iostream>
 using namespace std ;
 
-{{function declaration}}
+#*function declaration}}
 
-{{output}}
+#*output}}
 
-{{init}}
+#*init}}
 
-{{boundaryCondition}}
+#*boundaryCondition}}
 
-{{second order spatial derivative}}
+#*second order spatial derivative}}
 
-{{forwad Euler method}}
+#*forwad Euler method}}
 
-{{solving wave equation}}
+#*solving wave equation}}
 
-{{update Functions in time}}
+#*update Functions in time}}
 
-{{gnuplot}}
+#*gnuplot}}
 
-{{runge kutta solver}}
+#*runge kutta solver}}
 
-{{wave DGL}}
+#*wave DGL}}
 
 int main(int argc, char** argv)
 {
@@ -149,11 +147,10 @@ int main(int argc, char** argv)
     //{{Runge Kutter solver}}
 	return 0;
 };
-@
 ```
 
+*runge kutta solver*
 ```cpp
-{{runge kutta solver}}=
 void rungekuttaSolver(double y[],int n, double t, double dt, double dx, void (derivs)(double, double[], double[])){
     int j,i;
     double dt2,dt6,tdt, tdtdt,y1[n],k1[n],k2[n],k3[n];
@@ -176,22 +173,20 @@ void rungekuttaSolver(double y[],int n, double t, double dt, double dx, void (de
         y[i]+=dt6*(k1[i]+4.*k2[i]+k3[i]);
     }
 }
-@
 ```
 
 
+*wave DGL*
 ```cpp
-{{wave DGL}}=
 void waveDGL(double t, double y[], double dydt[], double dx){
     //dydt[0] =y[1];
     //dydt[1] =pow(CSpeed, 2)*(-y[2][i+2]+8*y[2][i+1]-8*y[2][i-1]+y[2][i-2])/(12*dx) ;
     //dydt[2] =(-y[1][i+2]+8*y[1][i+1]-8*y[1][i-1]+y[1][i-2])/(12*dx) ;
 }
-@
 ```
 
+*solving wave equation*
 ```cpp
-{{solving wave equation}}=
 void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], double t, double dt, double x[], double dx, double CSpeed, int xSteps, int tSteps){
     for (int j = 1; j <= tSteps; j=j+1) {
         t=j*dt;
@@ -208,11 +203,10 @@ void solvingWaveEquation(double phi[][2], double eta[][2], double chi[][2], doub
         updateFunc(xSteps, phi, eta, chi);
     };
 };
-@
 ```
 
+*forwad Euler method*
 ```cpp
-{{forwad Euler method}}=
 void forwardEulerMethod(double funct[][2], double funct2[][2], double dt, int xi, double dx, double factor, int deriv){
     if (deriv == 0) {
         funct[xi][1]=funct[xi][0]+factor*dt*funct2[xi][0];
@@ -220,40 +214,36 @@ void forwardEulerMethod(double funct[][2], double funct2[][2], double dt, int xi
         funct[xi][1]=funct[xi][0]+factor*dt*secondOrderSpatial(funct2, xi, dx);
     }
 };
-@
 ```
 
 
+*second order spatial derivative*
 ```cpp
-{{second order spatial derivative}}=
 double secondOrderSpatial(double funct2[][2], int xi, double dx){
     return (funct2[xi+1][0]-funct2[xi-1][0])/(2*dx);
 };
-@
 ```
 
 
 
+*output*
 ```cpp
-{{output}}=
 void output(int ti, int xi, double t, double x[], double phi[][2]){
     // x phi
     cout << x[xi] << ' ' <<  phi[xi][ti] << endl;
 };
-@
 ```
 
 
+*gnuplot*
 ```cpp
-{{gnuplot}}=
 void gnuplot(){
     cout << "plot '-' w l" << endl;
 };
-@
 ```
 
+*update Functions in time*
 ```cpp
-{{update Functions in time}}=
 void updateFunc(int xSteps, double phi[][2], double eta[][2], double chi[][2]){
     for (int i = 0; i <= xSteps; i=i+1) {
         phi[i][0] = phi[i][1];
@@ -261,11 +251,10 @@ void updateFunc(int xSteps, double phi[][2], double eta[][2], double chi[][2]){
         eta[i][0] = eta[i][1];
 	}
 };
-@
 ```
 
+*init*
 ```cpp
-{{init}}=
 void init(double t, double x[], double phi[][2], double eta[][2], double chi[][2], int xSteps, double dx, double L){
     cout << "reset" << endl;
     cout << "set xrange [0:1]" << endl;
@@ -291,11 +280,10 @@ void init(double t, double x[], double phi[][2], double eta[][2], double chi[][2
     output(0, (xSteps-2), t, x, phi);
 
 };
-@
 ```
 
+*boundaryCondition*
 ```cpp
-{{boundaryCondition}}=
 void boundaryCondition(int ti, int xSteps, double phi[][2], double eta[][2], double chi[][2]){
     phi[0][ti] = phi[xSteps-5][ti];
     eta[0][ti] = eta[xSteps-5][ti];
@@ -313,11 +301,10 @@ void boundaryCondition(int ti, int xSteps, double phi[][2], double eta[][2], dou
     eta[xSteps-1][ti] = eta[4][ti];
     chi[xSteps-1][ti] = chi[4][ti];
 };
-@
 ```
 
+*function declaration*
 ```cpp
-{{function declaration}}=
 void output(int ti, int xi, double t, double x[], double phi[][2]);
 void init(double t, double x[], double phi[][2], double eta[][2], double chi[][2], int xSteps, double dx, double L);
 void boundaryCondition(int ti, int xSteps, double phi[][2], double eta[][2], double chi[][2]);
@@ -328,22 +315,20 @@ void updateFunc(int xSteps, double phi[][2], double eta[][2], double chi[][2]);
 void gnuplot();
 void rungekuttaSolver(double y[],int n,double x,double h, void (derivs)(double, double[], double[]));
 void waveDGL(double dt, double y[], double dydt[], double dx);
-@
 ```
-
-
 
 
 ## Latex File
 
-
+*latex and pdf generater*
 ```bash
-noweb.py -RProblem_Set_I_solve_wave_equation.tex Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.tex && pdflatex  -shell-escape Problem_Set_I_solve_wave_equation.tex && xdg-open Problem_Set_I_solve_wave_equation.pdf 2>/dev/null &
+noweb.py -RProblem_Set_I_solve_wave_equation.tex Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.tex && pdflatex -shell-escape Problem_Set_I_solve_wave_equation.tex > /dev/null
+#noweb.py -RProblem_Set_I_solve_wave_equation.tex Problem_Set_I_solve_wave_equation.md > Problem_Set_I_solve_wave_equation.tex && pdflatex  -shell-escape Problem_Set_I_solve_wave_equation.tex && xdg-open Problem_Set_I_solve_wave_equation.pdf 2>/dev/null &
 ```
 
 
+*Problem_Set_I_solve_wave_equation.tex*
 ```tex
-{{Problem_Set_I_solve_wave_equation.tex}}=
 \documentclass[10pt,fleqn,reqno,a4paper]{article}
 \input{general-preamble.tex}
 \input{color-symbols.tex}
@@ -361,16 +346,12 @@ noweb.py -RProblem_Set_I_solve_wave_equation.tex Problem_Set_I_solve_wave_equati
 	\neta = \nphi_{,\ct}, \quad \nchi = \nphi_{,\cx}
 \end{align}
 
-
-
 $ \neta(\ct,\cx) \nchi(\ct,\cx) \vfu(\nphi,\neta,\nchi) $
 
 
 \begin{align}
 	\vfu_{,\ct}+\MA\vfu_{,\cx}=\vfS 
 \end{align}
-
-
 
 \subsection{initial condition}
 
@@ -385,8 +366,7 @@ with periodic condition:
 
 \section{Program}
 \begin{minted}[linenos=true,bgcolor=lightgraycolor,numberblanklines=true,showspaces=false,breaklines=true]{cpp}
-{{Problem_Set_I_solve_wave_equation.cpp}}
+#*Problem_Set_I_solve_wave_equation.cpp}}
 \end{minted}
 \end{document}
-@
 ```

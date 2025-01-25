@@ -3,11 +3,11 @@ Wiki-Format: zim 0.6
 ====== Analytic_Closures_for_M1_Neutrino_Transport_1701-07027v1.pdf ======
 Text date: [[Zettelkasten:2024:01:18|2024-01-18]] Modi date: [[Zettelkasten:2024:01:18|2024-01-18]]
 @ARTIKEL  
-[*] **[[../Analytic_Closures_for_M1_Neutrino_Transport_1701-07027v1.pdf]] **
+[*] **[[./Analytic_Closures_for_M1_Neutrino_Transport_1701-07027v1.pdf]] **
 
 
 
-{{../Analytic_Closures_for_M1_Neutrino_Transport_1701-07027v1.pdf.avif?width=500}}
+{{./Analytic_Closures_for_M1_Neutrino_Transport_1701-07027v1.pdf.avif?width=500}}
 
 Pages:           13
 
